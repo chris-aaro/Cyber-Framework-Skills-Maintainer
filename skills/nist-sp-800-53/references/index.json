@@ -1,0 +1,131 @@
+{
+  "control_count": 1196,
+  "control_family_count": 20,
+  "families": [
+    {
+      "control_count": 147,
+      "file": "controls/ac.json",
+      "id": "ac",
+      "title": "Access Control"
+    },
+    {
+      "control_count": 17,
+      "file": "controls/at.json",
+      "id": "at",
+      "title": "Awareness and Training"
+    },
+    {
+      "control_count": 69,
+      "file": "controls/au.json",
+      "id": "au",
+      "title": "Audit and Accountability"
+    },
+    {
+      "control_count": 32,
+      "file": "controls/ca.json",
+      "id": "ca",
+      "title": "Assessment, Authorization, and Monitoring"
+    },
+    {
+      "control_count": 66,
+      "file": "controls/cm.json",
+      "id": "cm",
+      "title": "Configuration Management"
+    },
+    {
+      "control_count": 56,
+      "file": "controls/cp.json",
+      "id": "cp",
+      "title": "Contingency Planning"
+    },
+    {
+      "control_count": 74,
+      "file": "controls/ia.json",
+      "id": "ia",
+      "title": "Identification and Authentication"
+    },
+    {
+      "control_count": 42,
+      "file": "controls/ir.json",
+      "id": "ir",
+      "title": "Incident Response"
+    },
+    {
+      "control_count": 30,
+      "file": "controls/ma.json",
+      "id": "ma",
+      "title": "Maintenance"
+    },
+    {
+      "control_count": 30,
+      "file": "controls/mp.json",
+      "id": "mp",
+      "title": "Media Protection"
+    },
+    {
+      "control_count": 59,
+      "file": "controls/pe.json",
+      "id": "pe",
+      "title": "Physical and Environmental Protection"
+    },
+    {
+      "control_count": 17,
+      "file": "controls/pl.json",
+      "id": "pl",
+      "title": "Planning"
+    },
+    {
+      "control_count": 37,
+      "file": "controls/pm.json",
+      "id": "pm",
+      "title": "Program Management"
+    },
+    {
+      "control_count": 18,
+      "file": "controls/ps.json",
+      "id": "ps",
+      "title": "Personnel Security"
+    },
+    {
+      "control_count": 21,
+      "file": "controls/pt.json",
+      "id": "pt",
+      "title": "Personally Identifiable Information Processing and Transparency"
+    },
+    {
+      "control_count": 26,
+      "file": "controls/ra.json",
+      "id": "ra",
+      "title": "Risk Assessment"
+    },
+    {
+      "control_count": 147,
+      "file": "controls/sa.json",
+      "id": "sa",
+      "title": "System and Services Acquisition"
+    },
+    {
+      "control_count": 162,
+      "file": "controls/sc.json",
+      "id": "sc",
+      "title": "System and Communications Protection"
+    },
+    {
+      "control_count": 119,
+      "file": "controls/si.json",
+      "id": "si",
+      "title": "System and Information Integrity"
+    },
+    {
+      "control_count": 27,
+      "file": "controls/sr.json",
+      "id": "sr",
+      "title": "Supply Chain Risk Management"
+    }
+  ],
+  "framework_id": "nist-sp-800-53",
+  "generated_at": "2026-06-09T05:23:35.492088+00:00",
+  "source_last_modified": "2026-05-11T16:01:09.00000-00:00",
+  "title": "Electronic (OSCAL) Version of NIST SP 800-53 Rev 5.2.0 Controls and SP 800-53A Rev 5.2.0 Assessment Procedures",
+  "version": "5.2.0"
+}

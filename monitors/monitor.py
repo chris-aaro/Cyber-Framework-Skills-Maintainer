@@ -445,7 +445,7 @@ def monitor_framework(
         print(
             f"  ! version_pin_mismatch  pinned={mismatch['pinned']}  "
             f"detected={mismatch['detected']}  ({mismatch['classification']})"
-            "  -> handled by propose-update.yml (PR)"
+            "  -> handled by the weekly Claude Code routine (content PR)"
         )
         results.append(
             {

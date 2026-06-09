@@ -1,12 +1,15 @@
 name: Propose framework update
 
-# When a framework's pinned version differs from the version detected on its
-# live canonical source, this workflow prepares a deterministic version-bump and
-# opens a pull request for review. It never edits `main` directly — you approve
-# the PR.
+# DETERMINISTIC FALLBACK — manual only.
 #
-# Scope: version bumps only. It does NOT rewrite SKILL.md control language; the
-# PR asks the reviewer to confirm substantive changes against the official source.
+# The primary path for keeping skills current is now the weekly Claude Code
+# routine (see routines/weekly-maintenance.md), which bumps the version AND
+# updates the bundled reference content + drafts a changelog summary in one PR.
+#
+# This workflow is kept as a manual, no-Claude fallback that ONLY bumps the
+# version number (no content update). Its schedule is intentionally removed so it
+# does not open duplicate PRs alongside the routine. Trigger it by hand if the
+# routine is unavailable.
 
 on:
   workflow_dispatch:
@@ -14,9 +17,6 @@ on:
       framework:
         description: "Framework id to check (e.g. nist-sp-800-53)"
         required: true
-  schedule:
-    # Weekly, Mondays 07:00 UTC (one hour after the monitor's issue sweep).
-    - cron: "0 7 * * 1"
 
 permissions:
   contents: write        # create a branch + commit

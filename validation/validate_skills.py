@@ -62,6 +62,10 @@ REQUIRED_SECTIONS = [
     "Sources",
 ]
 
+# Additionally required only for skills that bundle structured content
+# (content_mode: structured) — enforced in _check_reference_content.
+STRUCTURED_REQUIRED_SECTIONS = ["Reference Data"]
+
 # Risky / over-claiming phrases (case-insensitive).
 RISKY_PHRASES = [
     "always required",
@@ -112,16 +116,23 @@ def _strip_reference_blocks(text: str) -> str:
     return pattern.sub("", text)
 
 
+def _skill_headings(skill_dir: Path) -> set[str]:
+    """Set of normalized markdown H2 headings in SKILL.md (lowercased, no trailing '.')."""
+    skill_md = skill_dir / "SKILL.md"
+    if not skill_md.is_file():
+        return set()
+    text = read_text(skill_md)
+    return {
+        m.group(1).strip().rstrip(".").lower()
+        for m in re.finditer(r"^##\s+(.+?)\s*$", text, re.MULTILINE)
+    }
+
+
 def _check_skill_sections(skill_dir: Path, res: FrameworkResult) -> None:
     skill_md = skill_dir / "SKILL.md"
     if not skill_md.is_file():
         return  # already reported by file check
-    text = read_text(skill_md)
-    # Markdown H2 headings, normalized (strip trailing punctuation/whitespace).
-    headings = {
-        m.group(1).strip().rstrip(".").lower()
-        for m in re.finditer(r"^##\s+(.+?)\s*$", text, re.MULTILINE)
-    }
+    headings = _skill_headings(skill_dir)
     for section in REQUIRED_SECTIONS:
         if section.rstrip(".").lower() not in headings:
             res.errors.append(f"SKILL.md missing required section: '## {section}'")
@@ -173,6 +184,71 @@ def _check_sources(skill_dir: Path, res: FrameworkResult) -> None:
         res.errors.append("sources.yaml must declare at least one canonical source")
 
 
+def _check_reference_content(skill_dir: Path, fw: dict, res: FrameworkResult) -> None:
+    """
+    For skills with content_mode: structured, confirm the reference index exists,
+    its version matches the registry, and every file it lists is present and
+    non-empty. Skills without structured content are skipped.
+    """
+    profile_path = skill_dir / "framework_profile.yaml"
+    if not profile_path.is_file():
+        return
+    try:
+        profile = load_yaml(profile_path) or {}
+    except Exception:  # noqa: BLE001
+        return  # parse error already reported by _check_profile
+    if profile.get("content_mode") != "structured":
+        return
+
+    # Structured skills must document how to use the bundled references.
+    headings = _skill_headings(skill_dir)
+    for section in STRUCTURED_REQUIRED_SECTIONS:
+        if section.rstrip(".").lower() not in headings:
+            res.errors.append(
+                f"SKILL.md missing required section for structured content: "
+                f"'## {section}'"
+            )
+
+    rel_index = profile.get("reference_index")
+    if not rel_index:
+        res.errors.append(
+            "framework_profile.yaml content_mode is 'structured' but no "
+            "reference_index is declared"
+        )
+        return
+    index_path = skill_dir / rel_index
+    if not index_path.is_file():
+        res.errors.append(f"reference index not found: {rel_index} (run references/ingest.py)")
+        return
+    try:
+        import json
+
+        index = json.loads(read_text(index_path))
+    except Exception as exc:  # noqa: BLE001
+        res.errors.append(f"reference index could not be parsed: {exc}")
+        return
+
+    reg_version = str(fw.get("version", "")).strip()
+    idx_version = str(index.get("version", "")).strip()
+    if reg_version and idx_version and reg_version != idx_version:
+        res.errors.append(
+            f"reference index version '{idx_version}' != registry version "
+            f"'{reg_version}' (re-run references/ingest.py and bump together)"
+        )
+
+    families = index.get("families") or []
+    if not families:
+        res.errors.append("reference index lists no families")
+    index_dir = index_path.parent
+    for fam in families:
+        fpath = index_dir / fam.get("file", "")
+        if not fpath.is_file() or not fpath.read_text(encoding="utf-8").strip():
+            res.errors.append(
+                f"reference file missing or empty: {fam.get('file')!r} "
+                f"(family {fam.get('id')!r})"
+            )
+
+
 def _check_risky_language(skill_dir: Path, res: FrameworkResult) -> None:
     skill_md = skill_dir / "SKILL.md"
     if not skill_md.is_file():
@@ -204,6 +280,7 @@ def validate_framework(fw: dict) -> FrameworkResult:
     _check_profile(skill_dir, fw, res)
     _check_changelog(skill_dir, res)
     _check_sources(skill_dir, res)
+    _check_reference_content(skill_dir, fw, res)
     _check_risky_language(skill_dir, res)
     return res
 

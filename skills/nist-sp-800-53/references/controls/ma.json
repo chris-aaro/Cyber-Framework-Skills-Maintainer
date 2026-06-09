@@ -1,0 +1,588 @@
+{
+  "controls": [
+    {
+      "family_id": "ma",
+      "guidance": "Maintenance policy and procedures address the controls in the MA family that are implemented within systems and organizations. The risk management strategy is an important factor in establishing such policies and procedures. Policies and procedures contribute to security and privacy assurance. Therefore, it is important that security and privacy programs collaborate on the development of maintenance policy and procedures. Security and privacy program policies and procedures at the organization level are preferable, in general, and may obviate the need for mission- or system-specific policies and procedures. The policy can be included as part of the general security and privacy policy or be represented by multiple policies that reflect the complex nature of organizations. Procedures can be established for security and privacy programs, for mission or business processes, and for systems, if needed. Procedures describe how the policies or controls are implemented and can be directed at the individual or role that is the object of the procedure. Procedures can be documented in system security and privacy plans or in one or more separate documents. Events that may precipitate an update to maintenance policy and procedures assessment or audit findings, security incidents or breaches, or changes in applicable laws, executive orders, directives, regulations, policies, standards, and guidelines. Simply restating controls does not constitute an organizational policy or procedure.",
+      "id": "ma-1",
+      "parameters": [
+        {
+          "id": "ma-1_prm_1",
+          "label": "organization-defined personnel or roles"
+        },
+        {
+          "id": "ma-01_odp.01",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ma-01_odp.02",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ma-01_odp.03",
+          "label": "selection (one or more): organization-level | mission/business process-level | system-level"
+        },
+        {
+          "id": "ma-01_odp.04",
+          "label": "official"
+        },
+        {
+          "id": "ma-01_odp.05",
+          "label": "frequency"
+        },
+        {
+          "id": "ma-01_odp.06",
+          "label": "events"
+        },
+        {
+          "id": "ma-01_odp.07",
+          "label": "frequency"
+        },
+        {
+          "id": "ma-01_odp.08",
+          "label": "events"
+        }
+      ],
+      "statement": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "id": "ma-1_smt.a.1.a",
+                  "prose": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and"
+                },
+                {
+                  "id": "ma-1_smt.a.1.b",
+                  "prose": "Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and"
+                }
+              ],
+              "id": "ma-1_smt.a.1",
+              "prose": "[parameter: selection (one or more): organization-level | mission/business process-level | system-level] maintenance policy that:"
+            },
+            {
+              "id": "ma-1_smt.a.2",
+              "prose": "Procedures to facilitate the implementation of the maintenance policy and the associated maintenance controls;"
+            }
+          ],
+          "id": "ma-1_smt.a",
+          "prose": "Develop, document, and disseminate to [parameter: organization-defined personnel or roles]:"
+        },
+        {
+          "id": "ma-1_smt.b",
+          "prose": "Designate an [parameter: official] to manage the development, documentation, and dissemination of the maintenance policy and procedures; and"
+        },
+        {
+          "children": [
+            {
+              "id": "ma-1_smt.c.1",
+              "prose": "Policy [parameter: frequency] and following [parameter: events] ; and"
+            },
+            {
+              "id": "ma-1_smt.c.2",
+              "prose": "Procedures [parameter: frequency] and following [parameter: events]."
+            }
+          ],
+          "id": "ma-1_smt.c",
+          "prose": "Review and update the current maintenance:"
+        }
+      ],
+      "title": "Policy and Procedures"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ma",
+          "id": "ma-2.1",
+          "title": "Record Content"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "The use of automated mechanisms to manage and control system maintenance programs and activities helps to ensure the generation of timely, accurate, complete, and consistent maintenance records.",
+          "id": "ma-2.2",
+          "parameters": [
+            {
+              "id": "ma-2.2_prm_1",
+              "label": "organization-defined automated mechanisms"
+            },
+            {
+              "id": "ma-02.02_odp.01",
+              "label": "automated mechanisms"
+            },
+            {
+              "id": "ma-02.02_odp.02",
+              "label": "automated mechanisms"
+            },
+            {
+              "id": "ma-02.02_odp.03",
+              "label": "automated mechanisms"
+            }
+          ],
+          "statement": [
+            {
+              "id": "ma-2.2_smt.a",
+              "prose": "Schedule, conduct, and document maintenance, repair, and replacement actions for the system using [parameter: organization-defined automated mechanisms] ; and"
+            },
+            {
+              "id": "ma-2.2_smt.b",
+              "prose": "Produce up-to date, accurate, and complete records of all maintenance, repair, and replacement actions requested, scheduled, in process, and completed."
+            }
+          ],
+          "title": "Automated Maintenance Activities"
+        }
+      ],
+      "family_id": "ma",
+      "guidance": "Controlling system maintenance addresses the information security aspects of the system maintenance program and applies to all types of maintenance to system components conducted by local or nonlocal entities. Maintenance includes peripherals such as scanners, copiers, and printers. Information necessary for creating effective maintenance records includes the date and time of maintenance, a description of the maintenance performed, names of the individuals or group performing the maintenance, name of the escort, and system components or equipment that are removed or replaced. Organizations consider supply chain-related risks associated with replacement components for systems.",
+      "id": "ma-2",
+      "parameters": [
+        {
+          "id": "ma-02_odp.01",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ma-02_odp.02",
+          "label": "information"
+        },
+        {
+          "id": "ma-02_odp.03",
+          "label": "information"
+        }
+      ],
+      "statement": [
+        {
+          "id": "ma-2_smt.a",
+          "prose": "Schedule, document, and review records of maintenance, repair, and replacement on system components in accordance with manufacturer or vendor specifications and/or organizational requirements;"
+        },
+        {
+          "id": "ma-2_smt.b",
+          "prose": "Approve and monitor all maintenance activities, whether performed on site or remotely and whether the system or system components are serviced on site or removed to another location;"
+        },
+        {
+          "id": "ma-2_smt.c",
+          "prose": "Require that [parameter: personnel or roles] explicitly approve the removal of the system or system components from organizational facilities for off-site maintenance, repair, or replacement;"
+        },
+        {
+          "id": "ma-2_smt.d",
+          "prose": "Sanitize equipment to remove the following information from associated media prior to removal from organizational facilities for off-site maintenance, repair, or replacement: [parameter: information];"
+        },
+        {
+          "id": "ma-2_smt.e",
+          "prose": "Check all potentially impacted controls to verify that the controls are still functioning properly following maintenance, repair, or replacement actions; and"
+        },
+        {
+          "id": "ma-2_smt.f",
+          "prose": "Include the following information in organizational maintenance records: [parameter: information]."
+        }
+      ],
+      "title": "Controlled Maintenance"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ma",
+          "guidance": "Maintenance tools can be directly brought into a facility by maintenance personnel or downloaded from a vendor’s website. If, upon inspection of the maintenance tools, organizations determine that the tools have been modified in an improper manner or the tools contain malicious code, the incident is handled consistent with organizational policies and procedures for incident handling.",
+          "id": "ma-3.1",
+          "title": "Inspect Tools"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "If, upon inspection of media containing maintenance, diagnostic, and test programs, organizations determine that the media contains malicious code, the incident is handled consistent with organizational incident handling policies and procedures.",
+          "id": "ma-3.2",
+          "title": "Inspect Media"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Organizational information includes all information owned by organizations and any information provided to organizations for which the organizations serve as information stewards.",
+          "id": "ma-3.3",
+          "parameters": [
+            {
+              "id": "ma-03.03_odp",
+              "label": "personnel or roles"
+            }
+          ],
+          "statement": [
+            {
+              "id": "ma-3.3_smt.a",
+              "prose": "Verifying that there is no organizational information contained on the equipment;"
+            },
+            {
+              "id": "ma-3.3_smt.b",
+              "prose": "Sanitizing or destroying the equipment;"
+            },
+            {
+              "id": "ma-3.3_smt.c",
+              "prose": "Retaining the equipment within the facility; or"
+            },
+            {
+              "id": "ma-3.3_smt.d",
+              "prose": "Obtaining an exemption from [parameter: personnel or roles] explicitly authorizing removal of the equipment from the facility."
+            }
+          ],
+          "title": "Prevent Unauthorized Removal"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Restricting the use of maintenance tools to only authorized personnel applies to systems that are used to carry out maintenance functions.",
+          "id": "ma-3.4",
+          "title": "Restricted Tool Use"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Maintenance tools that execute with increased system privilege can result in unauthorized access to organizational information and assets that would otherwise be inaccessible.",
+          "id": "ma-3.5",
+          "title": "Execution with Privilege"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Maintenance tools using outdated and/or unpatched software can provide a threat vector for adversaries and result in a significant vulnerability for organizations.",
+          "id": "ma-3.6",
+          "title": "Software Updates and Patches"
+        }
+      ],
+      "family_id": "ma",
+      "guidance": "Approving, controlling, monitoring, and reviewing maintenance tools address security-related issues associated with maintenance tools that are not within system authorization boundaries and are used specifically for diagnostic and repair actions on organizational systems. Organizations have flexibility in determining roles for the approval of maintenance tools and how that approval is documented. A periodic review of maintenance tools facilitates the withdrawal of approval for outdated, unsupported, irrelevant, or no-longer-used tools. Maintenance tools can include hardware, software, and firmware items and may be pre-installed, brought in with maintenance personnel on media, cloud-based, or downloaded from a website. Such tools can be vehicles for transporting malicious code, either intentionally or unintentionally, into a facility and subsequently into systems. Maintenance tools can include hardware and software diagnostic test equipment and packet sniffers. The hardware and software components that support maintenance and are a part of the system (including the software implementing utilities such as \"ping,\" \"ls,\" \"ipconfig,\" or the hardware and software implementing the monitoring port of an Ethernet switch) are not addressed by maintenance tools.",
+      "id": "ma-3",
+      "parameters": [
+        {
+          "id": "ma-03_odp",
+          "label": "frequency"
+        }
+      ],
+      "statement": [
+        {
+          "id": "ma-3_smt.a",
+          "prose": "Approve, control, and monitor the use of system maintenance tools; and"
+        },
+        {
+          "id": "ma-3_smt.b",
+          "prose": "Review previously approved system maintenance tools [parameter: frequency]."
+        }
+      ],
+      "title": "Maintenance Tools"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ma",
+          "guidance": "Audit logging for nonlocal maintenance is enforced by [AU-2](#au-2) . Audit events are defined in [AU-2a](#au-2_smt.a).",
+          "id": "ma-4.1",
+          "parameters": [
+            {
+              "id": "ma-4.1_prm_1",
+              "label": "organization-defined audit events"
+            },
+            {
+              "id": "ma-04.01_odp.01",
+              "label": "audit events"
+            },
+            {
+              "id": "ma-04.01_odp.02",
+              "label": "audit events"
+            }
+          ],
+          "statement": [
+            {
+              "id": "ma-4.1_smt.a",
+              "prose": "Log [parameter: organization-defined audit events] for nonlocal maintenance and diagnostic sessions; and"
+            },
+            {
+              "id": "ma-4.1_smt.b",
+              "prose": "Review the audit records of the maintenance and diagnostic sessions to detect anomalous behavior."
+            }
+          ],
+          "title": "Logging and Review"
+        },
+        {
+          "family_id": "ma",
+          "id": "ma-4.2",
+          "title": "Document Nonlocal Maintenance"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Comparable security capability on systems, diagnostic tools, and equipment providing maintenance services implies that the implemented controls on those systems, tools, and equipment are at least as comprehensive as the controls on the system being serviced.",
+          "id": "ma-4.3",
+          "statement": [
+            {
+              "id": "ma-4.3_smt.a",
+              "prose": "Require that nonlocal maintenance and diagnostic services be performed from a system that implements a security capability comparable to the capability implemented on the system being serviced; or"
+            },
+            {
+              "id": "ma-4.3_smt.b",
+              "prose": "Remove the component to be serviced from the system prior to nonlocal maintenance or diagnostic services; sanitize the component (for organizational information); and after the service is performed, inspect and sanitize the component (for potentially malicious software) before reconnecting the component to the system."
+            }
+          ],
+          "title": "Comparable Security and Sanitization"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Communications paths can be logically separated using encryption.",
+          "id": "ma-4.4",
+          "parameters": [
+            {
+              "id": "ma-04.04_odp",
+              "label": "authenticators that are replay resistant"
+            }
+          ],
+          "statement": [
+            {
+              "id": "ma-4.4_smt.a",
+              "prose": "Employing [parameter: authenticators that are replay resistant] ; and"
+            },
+            {
+              "children": [
+                {
+                  "id": "ma-4.4_smt.b.1",
+                  "prose": "Physically separated communications paths; or"
+                },
+                {
+                  "id": "ma-4.4_smt.b.2",
+                  "prose": "Logically separated communications paths."
+                }
+              ],
+              "id": "ma-4.4_smt.b",
+              "prose": "Separating the maintenance sessions from other network sessions with the system by either:"
+            }
+          ],
+          "title": "Authentication and Separation of Maintenance Sessions"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Notification may be performed by maintenance personnel. Approval of nonlocal maintenance is accomplished by personnel with sufficient information security and system knowledge to determine the appropriateness of the proposed maintenance.",
+          "id": "ma-4.5",
+          "parameters": [
+            {
+              "id": "ma-04.05_odp.01",
+              "label": "personnel or roles"
+            },
+            {
+              "id": "ma-04.05_odp.02",
+              "label": "personnel and roles"
+            }
+          ],
+          "statement": [
+            {
+              "id": "ma-4.5_smt.a",
+              "prose": "Require the approval of each nonlocal maintenance session by [parameter: personnel or roles] ; and"
+            },
+            {
+              "id": "ma-4.5_smt.b",
+              "prose": "Notify the following personnel or roles of the date and time of planned nonlocal maintenance: [parameter: personnel and roles]."
+            }
+          ],
+          "title": "Approvals and Notifications"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Failure to protect nonlocal maintenance and diagnostic communications can result in unauthorized individuals gaining access to organizational information. Unauthorized access during remote maintenance sessions can result in a variety of hostile actions, including malicious code insertion, unauthorized changes to system parameters, and exfiltration of organizational information. Such actions can result in the loss or degradation of mission or business capabilities.",
+          "id": "ma-4.6",
+          "parameters": [
+            {
+              "id": "ma-04.06_odp",
+              "label": "cryptographic mechanisms"
+            }
+          ],
+          "title": "Cryptographic Protection"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Verifying the termination of a connection once maintenance is completed ensures that connections established during nonlocal maintenance and diagnostic sessions have been terminated and are no longer available for use.",
+          "id": "ma-4.7",
+          "title": "Disconnect Verification"
+        }
+      ],
+      "family_id": "ma",
+      "guidance": "Nonlocal maintenance and diagnostic activities are conducted by individuals who communicate through either an external or internal network. Local maintenance and diagnostic activities are carried out by individuals who are physically present at the system location and not communicating across a network connection. Authentication techniques used to establish nonlocal maintenance and diagnostic sessions reflect the network access requirements in [IA-2](#ia-2) . Strong authentication requires authenticators that are resistant to replay attacks and employ multi-factor authentication. Strong authenticators include PKI where certificates are stored on a token protected by a password, passphrase, or biometric. Enforcing requirements in [MA-4](#ma-4) is accomplished, in part, by other controls. [SP 800-63B](#e59c5a7c-8b1f-49ca-8de0-6ee0882180ce) provides additional guidance on strong authentication and authenticators.",
+      "id": "ma-4",
+      "statement": [
+        {
+          "id": "ma-4_smt.a",
+          "prose": "Approve and monitor nonlocal maintenance and diagnostic activities;"
+        },
+        {
+          "id": "ma-4_smt.b",
+          "prose": "Allow the use of nonlocal maintenance and diagnostic tools only as consistent with organizational policy and documented in the security plan for the system;"
+        },
+        {
+          "id": "ma-4_smt.c",
+          "prose": "Employ strong authentication in the establishment of nonlocal maintenance and diagnostic sessions;"
+        },
+        {
+          "id": "ma-4_smt.d",
+          "prose": "Maintain records for nonlocal maintenance and diagnostic activities; and"
+        },
+        {
+          "id": "ma-4_smt.e",
+          "prose": "Terminate session and network connections when nonlocal maintenance is completed."
+        }
+      ],
+      "title": "Nonlocal Maintenance"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ma",
+          "guidance": "Procedures for individuals who lack appropriate security clearances or who are not U.S. citizens are intended to deny visual and electronic access to classified or controlled unclassified information contained on organizational systems. Procedures for the use of maintenance personnel can be documented in security plans for the systems.",
+          "id": "ma-5.1",
+          "parameters": [
+            {
+              "id": "ma-05.01_odp",
+              "label": "alternate controls"
+            }
+          ],
+          "statement": [
+            {
+              "children": [
+                {
+                  "id": "ma-5.1_smt.a.1",
+                  "prose": "Maintenance personnel who do not have needed access authorizations, clearances, or formal access approvals are escorted and supervised during the performance of maintenance and diagnostic activities on the system by approved organizational personnel who are fully cleared, have appropriate access authorizations, and are technically qualified; and"
+                },
+                {
+                  "id": "ma-5.1_smt.a.2",
+                  "prose": "Prior to initiating maintenance or diagnostic activities by personnel who do not have needed access authorizations, clearances or formal access approvals, all volatile information storage components within the system are sanitized and all nonvolatile storage media are removed or physically disconnected from the system and secured; and"
+                }
+              ],
+              "id": "ma-5.1_smt.a",
+              "prose": "Implement procedures for the use of maintenance personnel that lack appropriate security clearances or are not U.S. citizens, that include the following requirements:"
+            },
+            {
+              "id": "ma-5.1_smt.b",
+              "prose": "Develop and implement [parameter: alternate controls] in the event a system component cannot be sanitized, removed, or disconnected from the system."
+            }
+          ],
+          "title": "Individuals Without Appropriate Access"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Personnel who conduct maintenance on organizational systems may be exposed to classified information during the course of their maintenance activities. To mitigate the inherent risk of such exposure, organizations use maintenance personnel that are cleared (i.e., possess security clearances) to the classification level of the information stored on the system.",
+          "id": "ma-5.2",
+          "title": "Security Clearances for Classified Systems"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Personnel who conduct maintenance on organizational systems may be exposed to classified information during the course of their maintenance activities. If access to classified information on organizational systems is restricted to U.S. citizens, the same restriction is applied to personnel performing maintenance on those systems.",
+          "id": "ma-5.3",
+          "title": "Citizenship Requirements for Classified Systems"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Personnel who conduct maintenance and diagnostic activities on organizational systems may be exposed to classified information. If non-U.S. citizens are permitted to perform maintenance and diagnostics activities on classified systems, then additional vetting is required to ensure agreements and restrictions are not being violated.",
+          "id": "ma-5.4",
+          "statement": [
+            {
+              "id": "ma-5.4_smt.a",
+              "prose": "Foreign nationals with appropriate security clearances are used to conduct maintenance and diagnostic activities on classified systems only when the systems are jointly owned and operated by the United States and foreign allied governments, or owned and operated solely by foreign allied governments; and"
+            },
+            {
+              "id": "ma-5.4_smt.b",
+              "prose": "Approvals, consents, and detailed operational conditions regarding the use of foreign nationals to conduct maintenance and diagnostic activities on classified systems are fully documented within Memoranda of Agreements."
+            }
+          ],
+          "title": "Foreign Nationals"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Personnel who perform maintenance activities in other capacities not directly related to the system include physical plant personnel and custodial personnel.",
+          "id": "ma-5.5",
+          "title": "Non-system Maintenance"
+        }
+      ],
+      "family_id": "ma",
+      "guidance": "Maintenance personnel refers to individuals who perform hardware or software maintenance on organizational systems, while [PE-2](#pe-2) addresses physical access for individuals whose maintenance duties place them within the physical protection perimeter of the systems. Technical competence of supervising individuals relates to the maintenance performed on the systems, while having required access authorizations refers to maintenance on and near the systems. Individuals not previously identified as authorized maintenance personnel—such as information technology manufacturers, vendors, systems integrators, and consultants—may require privileged access to organizational systems, such as when they are required to conduct maintenance activities with little or no notice. Based on organizational assessments of risk, organizations may issue temporary credentials to these individuals. Temporary credentials may be for one-time use or for very limited time periods.",
+      "id": "ma-5",
+      "statement": [
+        {
+          "id": "ma-5_smt.a",
+          "prose": "Establish a process for maintenance personnel authorization and maintain a list of authorized maintenance organizations or personnel;"
+        },
+        {
+          "id": "ma-5_smt.b",
+          "prose": "Verify that non-escorted personnel performing maintenance on the system possess the required access authorizations; and"
+        },
+        {
+          "id": "ma-5_smt.c",
+          "prose": "Designate organizational personnel with required access authorizations and technical competence to supervise the maintenance activities of personnel who do not possess the required access authorizations."
+        }
+      ],
+      "title": "Maintenance Personnel"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ma",
+          "guidance": "Preventive maintenance includes proactive care and the servicing of system components to maintain organizational equipment and facilities in satisfactory operating condition. Such maintenance provides for the systematic inspection, tests, measurements, adjustments, parts replacement, detection, and correction of incipient failures either before they occur or before they develop into major defects. The primary goal of preventive maintenance is to avoid or mitigate the consequences of equipment failures. Preventive maintenance is designed to preserve and restore equipment reliability by replacing worn components before they fail. Methods of determining what preventive (or other) failure management policies to apply include original equipment manufacturer recommendations; statistical failure records; expert opinion; maintenance that has already been conducted on similar equipment; requirements of codes, laws, or regulations within a jurisdiction; or measured values and performance indications.",
+          "id": "ma-6.1",
+          "parameters": [
+            {
+              "id": "ma-06.01_odp.01",
+              "label": "system components"
+            },
+            {
+              "id": "ma-06.01_odp.02",
+              "label": "time intervals"
+            }
+          ],
+          "title": "Preventive Maintenance"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "Predictive maintenance evaluates the condition of equipment by performing periodic or continuous (online) equipment condition monitoring. The goal of predictive maintenance is to perform maintenance at a scheduled time when the maintenance activity is most cost-effective and before the equipment loses performance within a threshold. The predictive component of predictive maintenance stems from the objective of predicting the future trend of the equipment's condition. The predictive maintenance approach employs principles of statistical process control to determine at what point in the future maintenance activities will be appropriate. Most predictive maintenance inspections are performed while equipment is in service, thus minimizing disruption of normal system operations. Predictive maintenance can result in substantial cost savings and higher system reliability.",
+          "id": "ma-6.2",
+          "parameters": [
+            {
+              "id": "ma-06.02_odp.01",
+              "label": "system components"
+            },
+            {
+              "id": "ma-06.02_odp.02",
+              "label": "time intervals"
+            }
+          ],
+          "title": "Predictive Maintenance"
+        },
+        {
+          "family_id": "ma",
+          "guidance": "A computerized maintenance management system maintains a database of information about the maintenance operations of organizations and automates the processing of equipment condition data to trigger maintenance planning, execution, and reporting.",
+          "id": "ma-6.3",
+          "parameters": [
+            {
+              "id": "ma-06.03_odp",
+              "label": "automated mechanisms"
+            }
+          ],
+          "title": "Automated Support for Predictive Maintenance"
+        }
+      ],
+      "family_id": "ma",
+      "guidance": "Organizations specify the system components that result in increased risk to organizational operations and assets, individuals, other organizations, or the Nation when the functionality provided by those components is not operational. Organizational actions to obtain maintenance support include having appropriate contracts in place.",
+      "id": "ma-6",
+      "parameters": [
+        {
+          "id": "ma-06_odp.01",
+          "label": "system components"
+        },
+        {
+          "id": "ma-06_odp.02",
+          "label": "time period"
+        }
+      ],
+      "title": "Timely Maintenance"
+    },
+    {
+      "family_id": "ma",
+      "guidance": "Field maintenance is the type of maintenance conducted on a system or system component after the system or component has been deployed to a specific site (i.e., operational environment). In certain instances, field maintenance (i.e., local maintenance at the site) may not be executed with the same degree of rigor or with the same quality control checks as depot maintenance. For critical systems designated as such by the organization, it may be necessary to restrict or prohibit field maintenance at the local site and require that such maintenance be conducted in trusted facilities with additional controls.",
+      "id": "ma-7",
+      "parameters": [
+        {
+          "id": "ma-07_odp.01",
+          "label": "systems or system components"
+        },
+        {
+          "id": "ma-07_odp.02",
+          "label": "trusted maintenance facilities"
+        }
+      ],
+      "title": "Field Maintenance"
+    }
+  ],
+  "family_id": "ma",
+  "family_title": "Maintenance"
+}
