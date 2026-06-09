@@ -119,6 +119,8 @@ def observe(source: dict, fetch: FetchResult) -> Observation:
     body = fetch.body
     title = extract_title(body)
     version = extract_with_pattern(body, meta.get("version_pattern"))
+    if version and meta.get("version_normalize") == "underscore_to_dot":
+        version = version.replace("_", ".")
     pub_date = extract_with_pattern(body, meta.get("date_pattern"))
     return Observation(
         source_id=source["id"],
@@ -260,6 +262,82 @@ def create_github_issue(repo: str, token: str, title: str, body: str) -> bool:
         return False
 
 
+def check_version_pin(
+    framework: dict, observations: list[Observation]
+) -> Optional[dict]:
+    """
+    Compare the detected version from canonical sources against the pinned
+    version declared in frameworks.yaml. Returns a mismatch dict if they
+    differ, None if they match or no version could be detected.
+
+    This runs on every monitor execution regardless of whether the source
+    hash changed — it validates that the skill stays current against the
+    live source, not just that nothing changed since last run.
+    """
+    pinned = str(framework.get("version", "")).strip()
+    if not pinned:
+        return None
+
+    # Collect detected versions from canonical sources only.
+    detected_versions = [
+        obs.detected_version
+        for obs in observations
+        if obs.type == "canonical" and obs.detected_version and obs.reachable
+    ]
+    if not detected_versions:
+        return None
+
+    # Use the first canonical source that detected a version (most authoritative).
+    detected = detected_versions[0].strip()
+    if not detected:
+        return None
+
+    version_classification = classify_version_change(pinned, detected)
+    if version_classification is None:
+        return None  # versions match or are indistinguishable
+
+    return {
+        "pinned": pinned,
+        "detected": detected,
+        "classification": version_classification,
+        "source_ids": [
+            obs.source_id
+            for obs in observations
+            if obs.type == "canonical" and obs.detected_version == detected
+        ],
+    }
+
+
+def build_pin_mismatch_issue(framework: dict, mismatch: dict) -> tuple[str, str]:
+    title = (
+        f"[{framework['id']}] version_pin_mismatch: "
+        f"pinned {mismatch['pinned']} but source detected {mismatch['detected']}"
+    )
+    lines = [
+        "The monitor detected that the **pinned version in this repository differs "
+        "from the version detected on the live official source**.",
+        "",
+        f"- **Framework:** {framework['name']} (`{framework['id']}`)",
+        f"- **Pinned version** (`frameworks.yaml` + `framework_profile.yaml`): "
+        f"`{mismatch['pinned']}`",
+        f"- **Detected version** (live source): `{mismatch['detected']}`",
+        f"- **Change classification:** `{mismatch['classification']}`",
+        f"- **Source(s) where detected:** {', '.join(f'`{s}`' for s in mismatch['source_ids'])}",
+        "",
+        "## Next steps",
+        "1. Visit the canonical source URL(s) above and confirm the detected version.",
+        "2. Review what changed between the pinned and detected versions.",
+        "3. Open a **pull request** that:",
+        "   - Updates `version` in `frameworks.yaml` and `framework_profile.yaml`.",
+        "   - Updates `SKILL.md` and `changelog.md` to reflect any content changes.",
+        "   - Updates `source_state.json` with the new baseline.",
+        "",
+        "_Do not update the pinned version without verifying the change against the "
+        "official source. Distinguish official framework text from interpretation._",
+    ]
+    return title, "\n".join(lines)
+
+
 def build_issue(framework: dict, obs: Observation, classification: str) -> tuple[str, str]:
     title = f"[{framework['id']}] {classification}: {obs.source_id}"
     lines = [
@@ -345,10 +423,12 @@ def monitor_framework(
     )
 
     results = []
+    all_observations: list[Observation] = []
     print(f"== {framework['id']} ({len(all_sources)} sources) ==")
     for source in all_sources:
         fetch = http_get(source["url"], timeout=timeout)
         obs = observe(source, fetch)
+        all_observations.append(obs)
         prev = state["sources"].get(source["id"])
         classification = classify(prev, obs)
         review = classification in REVIEW_WORTHY
@@ -378,6 +458,39 @@ def monitor_framework(
                 "issue_created": issue_created,
             }
         )
+
+    # ------------------------------------------------------------------ #
+    # Version pin check — runs every time regardless of hash changes.
+    # ------------------------------------------------------------------ #
+    observations = all_observations
+    mismatch = check_version_pin(framework, observations)
+    pin_issue_created = False
+    if mismatch:
+        label = (
+            f"  ! version_pin_mismatch  pinned={mismatch['pinned']}  "
+            f"detected={mismatch['detected']}  ({mismatch['classification']})"
+        )
+        print(label)
+        if repo and token:
+            pin_title, pin_body = build_pin_mismatch_issue(framework, mismatch)
+            if pin_title in existing_titles:
+                print(f"      (issue already open: {pin_title!r})")
+            else:
+                pin_issue_created = create_github_issue(repo, token, pin_title, pin_body)
+                if pin_issue_created:
+                    existing_titles.add(pin_title)
+                    print(f"      + opened issue: {pin_title!r}")
+        results.append(
+            {
+                "framework_id": framework["id"],
+                "source_id": "version_pin_check",
+                "classification": f"version_pin_mismatch:{mismatch['classification']}",
+                "review_worthy": True,
+                "issue_created": pin_issue_created,
+            }
+        )
+    else:
+        print(f"  ✓ version pin OK  (pinned={framework.get('version')})")
 
     if write:
         state["last_run"] = datetime.now(timezone.utc).isoformat()

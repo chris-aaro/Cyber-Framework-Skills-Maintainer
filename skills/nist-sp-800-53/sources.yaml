@@ -15,7 +15,10 @@ canonical_sources:
     description: "SP 800-53 Rev. 5 publication page (CSRC)."
     expected_metadata:
       title_contains: "SP 800-53"
-      version_pattern: "Rev(?:ision)?\\.?\\s*([0-9]+(?:\\.[0-9]+){0,2})"
+      # Extract version from the CPRT catalog link (e.g. SP_800_53_5_2_0 -> 5.2.0).
+      # The CSRC page title only says "Rev. 5"; the CPRT URL is the most precise signal.
+      version_pattern: "SP_800_53_(\\d+_\\d+_\\d+)"
+      version_normalize: underscore_to_dot
       date_pattern: "([A-Z][a-z]+ [0-9]{1,2}, [0-9]{4})"
 
   - id: sp800-53a-r5-csrc
