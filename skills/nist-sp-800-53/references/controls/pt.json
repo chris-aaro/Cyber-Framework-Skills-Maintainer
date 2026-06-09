@@ -1,0 +1,456 @@
+{
+  "controls": [
+    {
+      "family_id": "pt",
+      "guidance": "Personally identifiable information processing and transparency policy and procedures address the controls in the PT family that are implemented within systems and organizations. The risk management strategy is an important factor in establishing such policies and procedures. Policies and procedures contribute to security and privacy assurance. Therefore, it is important that security and privacy programs collaborate on the development of personally identifiable information processing and transparency policy and procedures. Security and privacy program policies and procedures at the organization level are preferable, in general, and may obviate the need for mission- or system-specific policies and procedures. The policy can be included as part of the general security and privacy policy or be represented by multiple policies that reflect the complex nature of organizations. Procedures can be established for security and privacy programs, for mission or business processes, and for systems, if needed. Procedures describe how the policies or controls are implemented and can be directed at the individual or role that is the object of the procedure. Procedures can be documented in system security and privacy plans or in one or more separate documents. Events that may precipitate an update to personally identifiable information processing and transparency policy and procedures include assessment or audit findings, breaches, or changes in applicable laws, executive orders, directives, regulations, policies, standards, and guidelines. Simply restating controls does not constitute an organizational policy or procedure.",
+      "id": "pt-1",
+      "parameters": [
+        {
+          "id": "pt-1_prm_1",
+          "label": "organization-defined personnel or roles"
+        },
+        {
+          "id": "pt-01_odp.01",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "pt-01_odp.02",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "pt-01_odp.03",
+          "label": "selection (one or more): organization-level | mission/business process-level | system-level"
+        },
+        {
+          "id": "pt-01_odp.04",
+          "label": "official"
+        },
+        {
+          "id": "pt-01_odp.05",
+          "label": "frequency"
+        },
+        {
+          "id": "pt-01_odp.06",
+          "label": "events"
+        },
+        {
+          "id": "pt-01_odp.07",
+          "label": "frequency"
+        },
+        {
+          "id": "pt-01_odp.08",
+          "label": "events"
+        }
+      ],
+      "statement": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "id": "pt-1_smt.a.1.a",
+                  "prose": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and"
+                },
+                {
+                  "id": "pt-1_smt.a.1.b",
+                  "prose": "Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and"
+                }
+              ],
+              "id": "pt-1_smt.a.1",
+              "prose": "[parameter: selection (one or more): organization-level | mission/business process-level | system-level] personally identifiable information processing and transparency policy that:"
+            },
+            {
+              "id": "pt-1_smt.a.2",
+              "prose": "Procedures to facilitate the implementation of the personally identifiable information processing and transparency policy and the associated personally identifiable information processing and transparency controls;"
+            }
+          ],
+          "id": "pt-1_smt.a",
+          "prose": "Develop, document, and disseminate to [parameter: organization-defined personnel or roles]:"
+        },
+        {
+          "id": "pt-1_smt.b",
+          "prose": "Designate an [parameter: official] to manage the development, documentation, and dissemination of the personally identifiable information processing and transparency policy and procedures; and"
+        },
+        {
+          "children": [
+            {
+              "id": "pt-1_smt.c.1",
+              "prose": "Policy [parameter: frequency] and following [parameter: events] ; and"
+            },
+            {
+              "id": "pt-1_smt.c.2",
+              "prose": "Procedures [parameter: frequency] and following [parameter: events]."
+            }
+          ],
+          "id": "pt-1_smt.c",
+          "prose": "Review and update the current personally identifiable information processing and transparency:"
+        }
+      ],
+      "title": "Policy and Procedures"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "pt",
+          "guidance": "Data tags support the tracking and enforcement of authorized processing by conveying the types of processing that are authorized along with the relevant elements of personally identifiable information throughout the system. Data tags may also support the use of automated tools.",
+          "id": "pt-2.1",
+          "parameters": [
+            {
+              "id": "pt-02.01_odp.01",
+              "label": "authorized processing"
+            },
+            {
+              "id": "pt-02.01_odp.02",
+              "label": "elements of personally identifiable information"
+            }
+          ],
+          "title": "Data Tagging"
+        },
+        {
+          "family_id": "pt",
+          "guidance": "Automated mechanisms augment verification that only authorized processing is occurring.",
+          "id": "pt-2.2",
+          "parameters": [
+            {
+              "id": "pt-02.02_odp",
+              "label": "automated mechanisms"
+            }
+          ],
+          "title": "Automation"
+        }
+      ],
+      "family_id": "pt",
+      "guidance": "The processing of personally identifiable information is an operation or set of operations that the information system or organization performs with respect to personally identifiable information across the information life cycle. Processing includes but is not limited to creation, collection, use, processing, storage, maintenance, dissemination, disclosure, and disposal. Processing operations also include logging, generation, and transformation, as well as analysis techniques, such as data mining.\n\nOrganizations may be subject to laws, executive orders, directives, regulations, or policies that establish the organization’s authority and thereby limit certain types of processing of personally identifiable information or establish other requirements related to the processing. Organizational personnel consult with the senior agency official for privacy and legal counsel regarding such authority, particularly if the organization is subject to multiple jurisdictions or sources of authority. For organizations whose processing is not determined according to legal authorities, the organization’s policies and determinations govern how they process personally identifiable information. While processing of personally identifiable information may be legally permissible, privacy risks may still arise. Privacy risk assessments can identify the privacy risks associated with the authorized processing of personally identifiable information and support solutions to manage such risks.\n\nOrganizations consider applicable requirements and organizational policies to determine how to document this authority. For federal agencies, the authority to process personally identifiable information is documented in privacy policies and notices, system of records notices, privacy impact assessments, [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) statements, computer matching agreements and notices, contracts, information sharing agreements, memoranda of understanding, and other documentation.\n\nOrganizations take steps to ensure that personally identifiable information is only processed for authorized purposes, including training organizational personnel on the authorized processing of personally identifiable information and monitoring and auditing organizational use of personally identifiable information.",
+      "id": "pt-2",
+      "parameters": [
+        {
+          "id": "pt-02_odp.01",
+          "label": "authority"
+        },
+        {
+          "id": "pt-02_odp.02",
+          "label": "processing"
+        },
+        {
+          "id": "pt-02_odp.03",
+          "label": "processing"
+        }
+      ],
+      "statement": [
+        {
+          "id": "pt-2_smt.a",
+          "prose": "Determine and document the [parameter: authority] that permits the [parameter: processing] of personally identifiable information; and"
+        },
+        {
+          "id": "pt-2_smt.b",
+          "prose": "Restrict the [parameter: processing] of personally identifiable information to only that which is authorized."
+        }
+      ],
+      "title": "Authority to Process Personally Identifiable Information"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "pt",
+          "guidance": "Data tags support the tracking of processing purposes by conveying the purposes along with the relevant elements of personally identifiable information throughout the system. By conveying the processing purposes in a data tag along with the personally identifiable information as the information transits a system, a system owner or operator can identify whether a change in processing would be compatible with the identified and documented purposes. Data tags may also support the use of automated tools.",
+          "id": "pt-3.1",
+          "parameters": [
+            {
+              "id": "pt-03.01_odp.01",
+              "label": "processing purposes"
+            },
+            {
+              "id": "pt-03.01_odp.02",
+              "label": "elements of personally identifiable information"
+            }
+          ],
+          "title": "Data Tagging"
+        },
+        {
+          "family_id": "pt",
+          "guidance": "Automated mechanisms augment tracking of the processing purposes.",
+          "id": "pt-3.2",
+          "parameters": [
+            {
+              "id": "pt-03.02_odp",
+              "label": "automated mechanisms"
+            }
+          ],
+          "title": "Automation"
+        }
+      ],
+      "family_id": "pt",
+      "guidance": "Identifying and documenting the purpose for processing provides organizations with a basis for understanding why personally identifiable information may be processed. The term \"process\" includes every step of the information life cycle, including creation, collection, use, processing, storage, maintenance, dissemination, disclosure, and disposal. Identifying and documenting the purpose of processing is a prerequisite to enabling owners and operators of the system and individuals whose information is processed by the system to understand how the information will be processed. This enables individuals to make informed decisions about their engagement with information systems and organizations and to manage their privacy interests. Once the specific processing purpose has been identified, the purpose is described in the organization’s privacy notices, policies, and any related privacy compliance documentation, including privacy impact assessments, system of records notices, [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) statements, computer matching notices, and other applicable Federal Register notices.\n\nOrganizations take steps to help ensure that personally identifiable information is processed only for identified purposes, including training organizational personnel and monitoring and auditing organizational processing of personally identifiable information.\n\nOrganizations monitor for changes in personally identifiable information processing. Organizational personnel consult with the senior agency official for privacy and legal counsel to ensure that any new purposes that arise from changes in processing are compatible with the purpose for which the information was collected, or if the new purpose is not compatible, implement mechanisms in accordance with defined requirements to allow for the new processing, if appropriate. Mechanisms may include obtaining consent from individuals, revising privacy policies, or other measures to manage privacy risks that arise from changes in personally identifiable information processing purposes.",
+      "id": "pt-3",
+      "parameters": [
+        {
+          "id": "pt-03_odp.01",
+          "label": "purpose(s)"
+        },
+        {
+          "id": "pt-03_odp.02",
+          "label": "processing"
+        },
+        {
+          "id": "pt-03_odp.03",
+          "label": "mechanisms"
+        },
+        {
+          "id": "pt-03_odp.04",
+          "label": "requirements"
+        }
+      ],
+      "statement": [
+        {
+          "id": "pt-3_smt.a",
+          "prose": "Identify and document the [parameter: purpose(s)] for processing personally identifiable information;"
+        },
+        {
+          "id": "pt-3_smt.b",
+          "prose": "Describe the purpose(s) in the public privacy notices and policies of the organization;"
+        },
+        {
+          "id": "pt-3_smt.c",
+          "prose": "Restrict the [parameter: processing] of personally identifiable information to only that which is compatible with the identified purpose(s); and"
+        },
+        {
+          "id": "pt-3_smt.d",
+          "prose": "Monitor changes in processing personally identifiable information and implement [parameter: mechanisms] to ensure that any changes are made in accordance with [parameter: requirements]."
+        }
+      ],
+      "title": "Personally Identifiable Information Processing Purposes"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "pt",
+          "guidance": "While some processing may be necessary for the basic functionality of the product or service, other processing may not. In these circumstances, organizations allow individuals to select how specific personally identifiable information elements may be processed. More tailored consent may help reduce privacy risk, increase individual satisfaction, and avoid adverse behaviors, such as abandonment of the product or service.",
+          "id": "pt-4.1",
+          "parameters": [
+            {
+              "id": "pt-04.01_odp",
+              "label": "mechanisms"
+            }
+          ],
+          "title": "Tailored Consent"
+        },
+        {
+          "family_id": "pt",
+          "guidance": "Just-in-time consent enables individuals to participate in how their personally identifiable information is being processed at the time or in conjunction with specific types of data processing when such participation may be most useful to the individual. Individual assumptions about how personally identifiable information is being processed might not be accurate or reliable if time has passed since the individual last gave consent or the type of processing creates significant privacy risk. Organizations use discretion to determine when to use just-in-time consent and may use supporting information on demographics, focus groups, or surveys to learn more about individuals’ privacy interests and concerns.",
+          "id": "pt-4.2",
+          "parameters": [
+            {
+              "id": "pt-04.02_odp.01",
+              "label": "consent mechanisms"
+            },
+            {
+              "id": "pt-04.02_odp.02",
+              "label": "frequency"
+            },
+            {
+              "id": "pt-04.02_odp.03",
+              "label": "personally identifiable information processing"
+            }
+          ],
+          "title": "Just-in-time Consent"
+        },
+        {
+          "family_id": "pt",
+          "guidance": "Revocation of consent enables individuals to exercise control over their initial consent decision when circumstances change. Organizations consider usability factors in enabling easy-to-use revocation capabilities.",
+          "id": "pt-4.3",
+          "parameters": [
+            {
+              "id": "pt-04.03_odp",
+              "label": "tools or mechanisms"
+            }
+          ],
+          "title": "Revocation"
+        }
+      ],
+      "family_id": "pt",
+      "guidance": "Consent allows individuals to participate in making decisions about the processing of their information and transfers some of the risk that arises from the processing of personally identifiable information from the organization to an individual. Consent may be required by applicable laws, executive orders, directives, regulations, policies, standards, or guidelines. Otherwise, when selecting consent as a control, organizations consider whether individuals can be reasonably expected to understand and accept the privacy risks that arise from their authorization. Organizations consider whether other controls may more effectively mitigate privacy risk either alone or in conjunction with consent. Organizations also consider any demographic or contextual factors that may influence the understanding or behavior of individuals with respect to the processing carried out by the system or organization. When soliciting consent from individuals, organizations consider the appropriate mechanism for obtaining consent, including the type of consent (e.g., opt-in, opt-out), how to properly authenticate and identity proof individuals and how to obtain consent through electronic means. In addition, organizations consider providing a mechanism for individuals to revoke consent once it has been provided, as appropriate. Finally, organizations consider usability factors to help individuals understand the risks being accepted when providing consent, including the use of plain language and avoiding technical jargon.",
+      "id": "pt-4",
+      "parameters": [
+        {
+          "id": "pt-04_odp",
+          "label": "tools or mechanisms"
+        }
+      ],
+      "title": "Consent"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "pt",
+          "guidance": "Just-in-time notices inform individuals of how organizations process their personally identifiable information at a time when such notices may be most useful to the individuals. Individual assumptions about how personally identifiable information will be processed might not be accurate or reliable if time has passed since the organization last presented notice or the circumstances under which the individual was last provided notice have changed. A just-in-time notice can explain data actions that organizations have identified as potentially giving rise to greater privacy risk for individuals. Organizations can use a just-in-time notice to update or remind individuals about specific data actions as they occur or highlight specific changes that occurred since last presenting notice. A just-in-time notice can be used in conjunction with just-in-time consent to explain what will occur if consent is declined. Organizations use discretion to determine when to use a just-in-time notice and may use supporting information on user demographics, focus groups, or surveys to learn about users’ privacy interests and concerns.",
+          "id": "pt-5.1",
+          "parameters": [
+            {
+              "id": "pt-05.01_odp",
+              "label": "frequency"
+            }
+          ],
+          "title": "Just-in-time Notice"
+        },
+        {
+          "family_id": "pt",
+          "guidance": "If a federal agency asks individuals to supply information that will become part of a system of records, the agency is required to provide a [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) statement on the form used to collect the information or on a separate form that can be retained by the individual. The agency provides a [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) statement in such circumstances regardless of whether the information will be collected on a paper or electronic form, on a website, on a mobile application, over the telephone, or through some other medium. This requirement ensures that the individual is provided with sufficient information about the request for information to make an informed decision on whether or not to respond.\n\n[PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) statements provide formal notice to individuals of the authority that authorizes the solicitation of the information; whether providing the information is mandatory or voluntary; the principal purpose(s) for which the information is to be used; the published routine uses to which the information is subject; the effects on the individual, if any, of not providing all or any part of the information requested; and an appropriate citation and link to the relevant system of records notice. Federal agency personnel consult with the senior agency official for privacy and legal counsel regarding the notice provisions of the [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455).",
+          "id": "pt-5.2",
+          "title": "Privacy Act Statements"
+        }
+      ],
+      "family_id": "pt",
+      "guidance": "Privacy notices help inform individuals about how their personally identifiable information is being processed by the system or organization. Organizations use privacy notices to inform individuals about how, under what authority, and for what purpose their personally identifiable information is processed, as well as other information such as choices individuals might have with respect to that processing and other parties with whom information is shared. Laws, executive orders, directives, regulations, or policies may require that privacy notices include specific elements or be provided in specific formats. Federal agency personnel consult with the senior agency official for privacy and legal counsel regarding when and where to provide privacy notices, as well as elements to include in privacy notices and required formats. In circumstances where laws or government-wide policies do not require privacy notices, organizational policies and determinations may require privacy notices and may serve as a source of the elements to include in privacy notices.\n\nPrivacy risk assessments identify the privacy risks associated with the processing of personally identifiable information and may help organizations determine appropriate elements to include in a privacy notice to manage such risks. To help individuals understand how their information is being processed, organizations write materials in plain language and avoid technical jargon.",
+      "id": "pt-5",
+      "parameters": [
+        {
+          "id": "pt-05_odp.01",
+          "label": "frequency"
+        },
+        {
+          "id": "pt-05_odp.02",
+          "label": "information"
+        }
+      ],
+      "statement": [
+        {
+          "id": "pt-5_smt.a",
+          "prose": "Is available to individuals upon first interacting with an organization, and subsequently at [parameter: frequency];"
+        },
+        {
+          "id": "pt-5_smt.b",
+          "prose": "Is clear and easy-to-understand, expressing information about personally identifiable information processing in plain language;"
+        },
+        {
+          "id": "pt-5_smt.c",
+          "prose": "Identifies the authority that authorizes the processing of personally identifiable information;"
+        },
+        {
+          "id": "pt-5_smt.d",
+          "prose": "Identifies the purposes for which personally identifiable information is to be processed; and"
+        },
+        {
+          "id": "pt-5_smt.e",
+          "prose": "Includes [parameter: information]."
+        }
+      ],
+      "title": "Privacy Notice"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "pt",
+          "guidance": "A [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) routine use is a particular kind of disclosure of a record outside of the federal agency maintaining the system of records. A routine use is an exception to the [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) prohibition on the disclosure of a record in a system of records without the prior written consent of the individual to whom the record pertains. To qualify as a routine use, the disclosure must be for a purpose that is compatible with the purpose for which the information was originally collected. The [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) requires agencies to describe each routine use of the records maintained in the system of records, including the categories of users of the records and the purpose of the use. Agencies may only establish routine uses by explicitly publishing them in the relevant system of records notice.",
+          "id": "pt-6.1",
+          "parameters": [
+            {
+              "id": "pt-06.01_odp",
+              "label": "frequency"
+            }
+          ],
+          "title": "Routine Uses"
+        },
+        {
+          "family_id": "pt",
+          "guidance": "The [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) includes two sets of provisions that allow federal agencies to claim exemptions from certain requirements in the statute. In certain circumstances, these provisions allow agencies to promulgate regulations to exempt a system of records from select provisions of the [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) . At a minimum, organizations’ [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) exemption regulations include the specific name(s) of any system(s) of records that will be exempt, the specific provisions of the [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) from which the system(s) of records is to be exempted, the reasons for the exemption, and an explanation for why the exemption is both necessary and appropriate.",
+          "id": "pt-6.2",
+          "parameters": [
+            {
+              "id": "pt-06.02_odp",
+              "label": "frequency"
+            }
+          ],
+          "title": "Exemption Rules"
+        }
+      ],
+      "family_id": "pt",
+      "guidance": "The [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) requires that federal agencies publish a system of records notice in the Federal Register upon the establishment and/or modification of a [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) system of records. As a general matter, a system of records notice is required when an agency maintains a group of any records under the control of the agency from which information is retrieved by the name of an individual or by some identifying number, symbol, or other identifier. The notice describes the existence and character of the system and identifies the system of records, the purpose(s) of the system, the authority for maintenance of the records, the categories of records maintained in the system, the categories of individuals about whom records are maintained, the routine uses to which the records are subject, and additional details about the system as described in [OMB A-108](#3671ff20-c17c-44d6-8a88-7de203fa74aa).",
+      "id": "pt-6",
+      "statement": [
+        {
+          "id": "pt-6_smt.a",
+          "prose": "Draft system of records notices in accordance with OMB guidance and submit new and significantly modified system of records notices to the OMB and appropriate congressional committees for advance review;"
+        },
+        {
+          "id": "pt-6_smt.b",
+          "prose": "Publish system of records notices in the Federal Register; and"
+        },
+        {
+          "id": "pt-6_smt.c",
+          "prose": "Keep system of records notices accurate, up-to-date, and scoped in accordance with policy."
+        }
+      ],
+      "title": "System of Records Notice"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "pt",
+          "guidance": "Federal law and policy establish specific requirements for organizations’ processing of Social Security numbers. Organizations take steps to eliminate unnecessary uses of Social Security numbers and other sensitive information and observe any particular requirements that apply.",
+          "id": "pt-7.1",
+          "statement": [
+            {
+              "id": "pt-7.1_smt.a",
+              "prose": "Eliminate unnecessary collection, maintenance, and use of Social Security numbers, and explore alternatives to their use as a personal identifier;"
+            },
+            {
+              "id": "pt-7.1_smt.b",
+              "prose": "Do not deny any individual any right, benefit, or privilege provided by law because of such individual’s refusal to disclose his or her Social Security number; and"
+            },
+            {
+              "id": "pt-7.1_smt.c",
+              "prose": "Inform any individual who is asked to disclose his or her Social Security number whether that disclosure is mandatory or voluntary, by what statutory or other authority such number is solicited, and what uses will be made of it."
+            }
+          ],
+          "title": "Social Security Numbers"
+        },
+        {
+          "family_id": "pt",
+          "guidance": "The [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) limits agencies’ ability to process information that describes how individuals exercise rights guaranteed by the First Amendment. Organizations consult with the senior agency official for privacy and legal counsel regarding these requirements.",
+          "id": "pt-7.2",
+          "title": "First Amendment Information"
+        }
+      ],
+      "family_id": "pt",
+      "guidance": "Organizations apply any conditions or protections that may be necessary for specific categories of personally identifiable information. These conditions may be required by laws, executive orders, directives, regulations, policies, standards, or guidelines. The requirements may also come from the results of privacy risk assessments that factor in contextual changes that may result in an organizational determination that a particular category of personally identifiable information is particularly sensitive or raises particular privacy risks. Organizations consult with the senior agency official for privacy and legal counsel regarding any protections that may be necessary.",
+      "id": "pt-7",
+      "parameters": [
+        {
+          "id": "pt-07_odp",
+          "label": "processing conditions"
+        }
+      ],
+      "title": "Specific Categories of Personally Identifiable Information"
+    },
+    {
+      "family_id": "pt",
+      "guidance": "The [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) establishes requirements for federal and non-federal agencies if they engage in a matching program. In general, a matching program is a computerized comparison of records from two or more automated [PRIVACT](#18e71fec-c6fd-475a-925a-5d8495cf8455) systems of records or an automated system of records and automated records maintained by a non-federal agency (or agent thereof). A matching program either pertains to federal benefit programs or federal personnel or payroll records. A federal benefit match is performed to determine or verify eligibility for payments under federal benefit programs or to recoup payments or delinquent debts under federal benefit programs. A matching program involves not just the matching activity itself but also the investigative follow-up and ultimate action, if any.",
+      "id": "pt-8",
+      "statement": [
+        {
+          "id": "pt-8_smt.a",
+          "prose": "Obtain approval from the Data Integrity Board to conduct the matching program;"
+        },
+        {
+          "id": "pt-8_smt.b",
+          "prose": "Develop and enter into a computer matching agreement;"
+        },
+        {
+          "id": "pt-8_smt.c",
+          "prose": "Publish a matching notice in the Federal Register;"
+        },
+        {
+          "id": "pt-8_smt.d",
+          "prose": "Independently verify the information produced by the matching program before taking adverse action against an individual, if required; and"
+        },
+        {
+          "id": "pt-8_smt.e",
+          "prose": "Provide individuals with notice and an opportunity to contest the findings before taking adverse action against an individual."
+        }
+      ],
+      "title": "Computer Matching Requirements"
+    }
+  ],
+  "family_id": "pt",
+  "family_title": "Personally Identifiable Information Processing and Transparency"
+}

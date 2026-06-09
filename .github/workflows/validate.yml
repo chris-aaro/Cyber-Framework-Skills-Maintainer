@@ -30,5 +30,5 @@ jobs:
       - name: Validate skills (structure + guardrails)
         run: python validation/validate_skills.py
 
-      - name: Run skill tests
-        run: python -m pytest skills -q
+      - name: Run skill and transform tests
+        run: python -m pytest -q

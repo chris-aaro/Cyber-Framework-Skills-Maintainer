@@ -1,0 +1,989 @@
+{
+  "controls": [
+    {
+      "family_id": "ia",
+      "guidance": "Identification and authentication policy and procedures address the controls in the IA family that are implemented within systems and organizations. The risk management strategy is an important factor in establishing such policies and procedures. Policies and procedures contribute to security and privacy assurance. Therefore, it is important that security and privacy programs collaborate on the development of identification and authentication policy and procedures. Security and privacy program policies and procedures at the organization level are preferable, in general, and may obviate the need for mission- or system-specific policies and procedures. The policy can be included as part of the general security and privacy policy or be represented by multiple policies that reflect the complex nature of organizations. Procedures can be established for security and privacy programs, for mission or business processes, and for systems, if needed. Procedures describe how the policies or controls are implemented and can be directed at the individual or role that is the object of the procedure. Procedures can be documented in system security and privacy plans or in one or more separate documents. Events that may precipitate an update to identification and authentication policy and procedures include assessment or audit findings, security incidents or breaches, or changes in applicable laws, executive orders, directives, regulations, policies, standards, and guidelines. Simply restating controls does not constitute an organizational policy or procedure.",
+      "id": "ia-1",
+      "parameters": [
+        {
+          "id": "ia-1_prm_1",
+          "label": "organization-defined personnel or roles"
+        },
+        {
+          "id": "ia-01_odp.01",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ia-01_odp.02",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ia-01_odp.03",
+          "label": "selection (one or more): organization-level | mission/business process-level | system-level"
+        },
+        {
+          "id": "ia-01_odp.04",
+          "label": "official"
+        },
+        {
+          "id": "ia-01_odp.05",
+          "label": "frequency"
+        },
+        {
+          "id": "ia-01_odp.06",
+          "label": "events"
+        },
+        {
+          "id": "ia-01_odp.07",
+          "label": "frequency"
+        },
+        {
+          "id": "ia-01_odp.08",
+          "label": "events"
+        }
+      ],
+      "statement": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "id": "ia-1_smt.a.1.a",
+                  "prose": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and"
+                },
+                {
+                  "id": "ia-1_smt.a.1.b",
+                  "prose": "Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and"
+                }
+              ],
+              "id": "ia-1_smt.a.1",
+              "prose": "[parameter: selection (one or more): organization-level | mission/business process-level | system-level] identification and authentication policy that:"
+            },
+            {
+              "id": "ia-1_smt.a.2",
+              "prose": "Procedures to facilitate the implementation of the identification and authentication policy and the associated identification and authentication controls;"
+            }
+          ],
+          "id": "ia-1_smt.a",
+          "prose": "Develop, document, and disseminate to [parameter: organization-defined personnel or roles]:"
+        },
+        {
+          "id": "ia-1_smt.b",
+          "prose": "Designate an [parameter: official] to manage the development, documentation, and dissemination of the identification and authentication policy and procedures; and"
+        },
+        {
+          "children": [
+            {
+              "id": "ia-1_smt.c.1",
+              "prose": "Policy [parameter: frequency] and following [parameter: events] ; and"
+            },
+            {
+              "id": "ia-1_smt.c.2",
+              "prose": "Procedures [parameter: frequency] and following [parameter: events]."
+            }
+          ],
+          "id": "ia-1_smt.c",
+          "prose": "Review and update the current identification and authentication:"
+        }
+      ],
+      "title": "Policy and Procedures"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ia",
+          "guidance": "Multi-factor authentication requires the use of two or more different factors to achieve authentication. The authentication factors are defined as follows: something you know (e.g., a personal identification number [PIN]), something you have (e.g., a physical authenticator such as a cryptographic private key), or something you are (e.g., a biometric). Multi-factor authentication solutions that feature physical authenticators include hardware authenticators that provide time-based or challenge-response outputs and smart cards such as the U.S. Government Personal Identity Verification (PIV) card or the Department of Defense (DoD) Common Access Card (CAC). In addition to authenticating users at the system level (i.e., at logon), organizations may employ authentication mechanisms at the application level, at their discretion, to provide increased security. Regardless of the type of access (i.e., local, network, remote), privileged accounts are authenticated using multi-factor options appropriate for the level of risk. Organizations can add additional security measures, such as additional or more rigorous authentication mechanisms, for specific types of access.",
+          "id": "ia-2.1",
+          "title": "Multi-factor Authentication to Privileged Accounts"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Multi-factor authentication requires the use of two or more different factors to achieve authentication. The authentication factors are defined as follows: something you know (e.g., a personal identification number [PIN]), something you have (e.g., a physical authenticator such as a cryptographic private key), or something you are (e.g., a biometric). Multi-factor authentication solutions that feature physical authenticators include hardware authenticators that provide time-based or challenge-response outputs and smart cards such as the U.S. Government Personal Identity Verification card or the DoD Common Access Card. In addition to authenticating users at the system level, organizations may also employ authentication mechanisms at the application level, at their discretion, to provide increased information security. Regardless of the type of access (i.e., local, network, remote), non-privileged accounts are authenticated using multi-factor options appropriate for the level of risk. Organizations can provide additional security measures, such as additional or more rigorous authentication mechanisms, for specific types of access.",
+          "id": "ia-2.2",
+          "title": "Multi-factor Authentication to Non-privileged Accounts"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-2.3",
+          "title": "Local Access to Privileged Accounts"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-2.4",
+          "title": "Local Access to Non-privileged Accounts"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Individual authentication prior to shared group authentication mitigates the risk of using group accounts or authenticators.",
+          "id": "ia-2.5",
+          "title": "Individual Authentication with Group Authentication"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "The purpose of requiring a device that is separate from the system to which the user is attempting to gain access for one of the factors during multi-factor authentication is to reduce the likelihood of compromising authenticators or credentials stored on the system. Adversaries may be able to compromise such authenticators or credentials and subsequently impersonate authorized users. Implementing one of the factors on a separate device (e.g., a hardware token), provides a greater strength of mechanism and an increased level of assurance in the authentication process.",
+          "id": "ia-2.6",
+          "parameters": [
+            {
+              "id": "ia-02.06_odp.01",
+              "label": "selection (one or more): local | network | remote"
+            },
+            {
+              "id": "ia-02.06_odp.02",
+              "label": "selection (one or more): privileged accounts | non-privileged accounts"
+            },
+            {
+              "id": "ia-02.06_odp.03",
+              "label": "strength of mechanism requirements"
+            }
+          ],
+          "statement": [
+            {
+              "id": "ia-2.6_smt.a",
+              "prose": "One of the factors is provided by a device separate from the system gaining access; and"
+            },
+            {
+              "id": "ia-2.6_smt.b",
+              "prose": "The device meets [parameter: strength of mechanism requirements]."
+            }
+          ],
+          "title": "Access to Accounts —separate Device"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-2.7",
+          "title": "Network Access to Non-privileged Accounts — Separate Device"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Authentication processes resist replay attacks if it is impractical to achieve successful authentications by replaying previous authentication messages. Replay-resistant techniques include protocols that use nonces or challenges such as time synchronous or cryptographic authenticators.",
+          "id": "ia-2.8",
+          "parameters": [
+            {
+              "id": "ia-02.08_odp",
+              "label": "selection (one or more): privileged accounts | non-privileged accounts"
+            }
+          ],
+          "title": "Access to Accounts — Replay Resistant"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-2.9",
+          "title": "Network Access to Non-privileged Accounts — Replay Resistant"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Single sign-on enables users to log in once and gain access to multiple system resources. Organizations consider the operational efficiencies provided by single sign-on capabilities with the risk introduced by allowing access to multiple systems via a single authentication event. Single sign-on can present opportunities to improve system security, for example by providing the ability to add multi-factor authentication for applications and systems (existing and new) that may not be able to natively support multi-factor authentication.",
+          "id": "ia-2.10",
+          "parameters": [
+            {
+              "id": "ia-02.10_odp",
+              "label": "system accounts and services"
+            }
+          ],
+          "title": "Single Sign-on"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-2.11",
+          "title": "Remote Access — Separate Device"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Acceptance of Personal Identity Verification (PIV)-compliant credentials applies to organizations implementing logical access control and physical access control systems. PIV-compliant credentials are those credentials issued by federal agencies that conform to FIPS Publication 201 and supporting guidance documents. The adequacy and reliability of PIV card issuers are authorized using [SP 800-79-2](#10963761-58fc-4b20-b3d6-b44a54daba03) . Acceptance of PIV-compliant credentials includes derived PIV credentials, the use of which is addressed in [SP 800-166](#e8552d48-cf41-40aa-8b06-f45f7fb4706c) . The DOD Common Access Card (CAC) is an example of a PIV credential.",
+          "id": "ia-2.12",
+          "title": "Acceptance of PIV Credentials"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Out-of-band authentication refers to the use of two separate communication paths to identify and authenticate users or devices to an information system. The first path (i.e., the in-band path) is used to identify and authenticate users or devices and is generally the path through which information flows. The second path (i.e., the out-of-band path) is used to independently verify the authentication and/or requested action. For example, a user authenticates via a notebook computer to a remote server to which the user desires access and requests some action of the server via that communication path. Subsequently, the server contacts the user via the user’s cell phone to verify that the requested action originated from the user. The user may confirm the intended action to an individual on the telephone or provide an authentication code via the telephone. Out-of-band authentication can be used to mitigate actual or suspected \"man-in the-middle\" attacks. The conditions or criteria for activation include suspicious activities, new threat indicators, elevated threat levels, or the impact or classification level of information in requested transactions.",
+          "id": "ia-2.13",
+          "parameters": [
+            {
+              "id": "ia-02.13_odp.01",
+              "label": "out-of-band authentication"
+            },
+            {
+              "id": "ia-02.13_odp.02",
+              "label": "conditions"
+            }
+          ],
+          "title": "Out-of-band Authentication"
+        }
+      ],
+      "family_id": "ia",
+      "guidance": "Organizations can satisfy the identification and authentication requirements by complying with the requirements in [HSPD 12](#f16e438e-7114-4144-bfe2-2dfcad8cb2d0) . Organizational users include employees or individuals who organizations consider to have an equivalent status to employees (e.g., contractors and guest researchers). Unique identification and authentication of users applies to all accesses other than those that are explicitly identified in [AC-14](#ac-14) and that occur through the authorized use of group authenticators without individual authentication. Since processes execute on behalf of groups and roles, organizations may require unique identification of individuals in group accounts or for detailed accountability of individual activity.\n\nOrganizations employ passwords, physical authenticators, or biometrics to authenticate user identities or, in the case of multi-factor authentication, some combination thereof. Access to organizational systems is defined as either local access or network access. Local access is any access to organizational systems by users or processes acting on behalf of users, where access is obtained through direct connections without the use of networks. Network access is access to organizational systems by users (or processes acting on behalf of users) where access is obtained through network connections (i.e., nonlocal accesses). Remote access is a type of network access that involves communication through external networks. Internal networks include local area networks and wide area networks.\n\nThe use of encrypted virtual private networks for network connections between organization-controlled endpoints and non-organization-controlled endpoints may be treated as internal networks with respect to protecting the confidentiality and integrity of information traversing the network. Identification and authentication requirements for non-organizational users are described in [IA-8](#ia-8).",
+      "id": "ia-2",
+      "title": "Identification and Authentication (Organizational Users)"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ia",
+          "guidance": "A local connection is a connection with a device that communicates without the use of a network. A network connection is a connection with a device that communicates through a network. A remote connection is a connection with a device that communicates through an external network. Bidirectional authentication provides stronger protection to validate the identity of other devices for connections that are of greater risk.",
+          "id": "ia-3.1",
+          "parameters": [
+            {
+              "id": "ia-03.01_odp.01",
+              "label": "devices and/or types of devices"
+            },
+            {
+              "id": "ia-03.01_odp.02",
+              "label": "selection (one or more): local | remote | network"
+            }
+          ],
+          "title": "Cryptographic Bidirectional Authentication"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-3.2",
+          "title": "Cryptographic Bidirectional Network Authentication"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "The Dynamic Host Configuration Protocol (DHCP) is an example of a means by which clients can dynamically receive network address assignments.",
+          "id": "ia-3.3",
+          "parameters": [
+            {
+              "id": "ia-3.3_prm_1",
+              "label": "organization-defined lease information and lease duration"
+            },
+            {
+              "id": "ia-03.03_odp.01",
+              "label": "lease information"
+            },
+            {
+              "id": "ia-03.03_odp.02",
+              "label": "lease duration"
+            }
+          ],
+          "statement": [
+            {
+              "id": "ia-3.3_smt.a",
+              "prose": "Where addresses are allocated dynamically, standardize dynamic address allocation lease information and the lease duration assigned to devices in accordance with [parameter: organization-defined lease information and lease duration] ; and"
+            },
+            {
+              "id": "ia-3.3_smt.b",
+              "prose": "Audit lease information when assigned to a device."
+            }
+          ],
+          "title": "Dynamic Address Allocation"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Device attestation refers to the identification and authentication of a device based on its configuration and known operating state. Device attestation can be determined via a cryptographic hash of the device. If device attestation is the means of identification and authentication, then it is important that patches and updates to the device are handled via a configuration management process such that the patches and updates are done securely and do not disrupt identification and authentication to other devices.",
+          "id": "ia-3.4",
+          "parameters": [
+            {
+              "id": "ia-03.04_odp",
+              "label": "configuration management process"
+            }
+          ],
+          "title": "Device Attestation"
+        }
+      ],
+      "family_id": "ia",
+      "guidance": "Devices that require unique device-to-device identification and authentication are defined by type, device, or a combination of type and device. Organization-defined device types include devices that are not owned by the organization. Systems use shared known information (e.g., Media Access Control [MAC], Transmission Control Protocol/Internet Protocol [TCP/IP] addresses) for device identification or organizational authentication solutions (e.g., Institute of Electrical and Electronics Engineers (IEEE) 802.1x and Extensible Authentication Protocol [EAP], RADIUS server with EAP-Transport Layer Security [TLS] authentication, Kerberos) to identify and authenticate devices on local and wide area networks. Organizations determine the required strength of authentication mechanisms based on the security categories of systems and mission or business requirements. Because of the challenges of implementing device authentication on a large scale, organizations can restrict the application of the control to a limited number/type of devices based on mission or business needs.",
+      "id": "ia-3",
+      "parameters": [
+        {
+          "id": "ia-03_odp.01",
+          "label": "devices and/or types of devices"
+        },
+        {
+          "id": "ia-03_odp.02",
+          "label": "selection (one or more): local | remote | network"
+        }
+      ],
+      "title": "Device Identification and Authentication"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ia",
+          "guidance": "Prohibiting account identifiers as public identifiers applies to any publicly disclosed account identifier used for communication such as, electronic mail and instant messaging. Prohibiting the use of systems account identifiers that are the same as some public identifier, such as the individual identifier section of an electronic mail address, makes it more difficult for adversaries to guess user identifiers. Prohibiting account identifiers as public identifiers without the implementation of other supporting controls only complicates guessing of identifiers. Additional protections are required for authenticators and credentials to protect the account.",
+          "id": "ia-4.1",
+          "title": "Prohibit Account Identifiers as Public Identifiers"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-4.2",
+          "title": "Supervisor Authorization"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-4.3",
+          "title": "Multiple Forms of Certification"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Characteristics that identify the status of individuals include contractors, foreign nationals, and non-organizational users. Identifying the status of individuals by these characteristics provides additional information about the people with whom organizational personnel are communicating. For example, it might be useful for a government employee to know that one of the individuals on an email message is a contractor.",
+          "id": "ia-4.4",
+          "parameters": [
+            {
+              "id": "ia-04.04_odp",
+              "label": "characteristics"
+            }
+          ],
+          "title": "Identify User Status"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "In contrast to conventional approaches to identification that presume static accounts for preregistered users, many distributed systems establish identifiers at runtime for entities that were previously unknown. When identifiers are established at runtime for previously unknown entities, organizations can anticipate and provision for the dynamic establishment of identifiers. Pre-established trust relationships and mechanisms with appropriate authorities to validate credentials and related identifiers are essential.",
+          "id": "ia-4.5",
+          "parameters": [
+            {
+              "id": "ia-04.05_odp",
+              "label": "dynamic identifier policy"
+            }
+          ],
+          "title": "Dynamic Management"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Cross-organization identifier management provides the capability to identify individuals, groups, roles, or devices when conducting cross-organization activities involving the processing, storage, or transmission of information.",
+          "id": "ia-4.6",
+          "parameters": [
+            {
+              "id": "ia-04.06_odp",
+              "label": "external organizations"
+            }
+          ],
+          "title": "Cross-organization Management"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-4.7",
+          "title": "In-person Registration"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "A pairwise pseudonymous identifier is an opaque unguessable subscriber identifier generated by an identity provider for use at a specific individual relying party. Generating distinct pairwise pseudonymous identifiers with no identifying information about a subscriber discourages subscriber activity tracking and profiling beyond the operational requirements established by an organization. The pairwise pseudonymous identifiers are unique to each relying party except in situations where relying parties can show a demonstrable relationship justifying an operational need for correlation, or all parties consent to being correlated in such a manner.",
+          "id": "ia-4.8",
+          "title": "Pairwise Pseudonymous Identifiers"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "For each of the entities covered in [IA-2](#ia-2), [IA-3](#ia-3), [IA-8](#ia-8) , and [IA-9](#ia-9) , it is important to maintain the attributes for each authenticated entity on an ongoing basis in a central (protected) store.",
+          "id": "ia-4.9",
+          "parameters": [
+            {
+              "id": "ia-04.09_odp",
+              "label": "protected central storage"
+            }
+          ],
+          "title": "Attribute Maintenance and Protection"
+        }
+      ],
+      "family_id": "ia",
+      "guidance": "Common device identifiers include Media Access Control (MAC) addresses, Internet Protocol (IP) addresses, or device-unique token identifiers. The management of individual identifiers is not applicable to shared system accounts. Typically, individual identifiers are the usernames of the system accounts assigned to those individuals. In such instances, the account management activities of [AC-2](#ac-2) use account names provided by [IA-4](#ia-4) . Identifier management also addresses individual identifiers not necessarily associated with system accounts. Preventing the reuse of identifiers implies preventing the assignment of previously used individual, group, role, service, or device identifiers to different individuals, groups, roles, services, or devices.",
+      "id": "ia-4",
+      "parameters": [
+        {
+          "id": "ia-04_odp.01",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ia-04_odp.02",
+          "label": "time period"
+        }
+      ],
+      "statement": [
+        {
+          "id": "ia-4_smt.a",
+          "prose": "Receiving authorization from [parameter: personnel or roles] to assign an individual, group, role, service, or device identifier;"
+        },
+        {
+          "id": "ia-4_smt.b",
+          "prose": "Selecting an identifier that identifies an individual, group, role, service, or device;"
+        },
+        {
+          "id": "ia-4_smt.c",
+          "prose": "Assigning the identifier to the intended individual, group, role, service, or device; and"
+        },
+        {
+          "id": "ia-4_smt.d",
+          "prose": "Preventing reuse of identifiers for [parameter: time period]."
+        }
+      ],
+      "title": "Identifier Management"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ia",
+          "guidance": "Password-based authentication applies to passwords regardless of whether they are used in single-factor or multi-factor authentication. Long passwords or passphrases are preferable over shorter passwords. Enforced composition rules provide marginal security benefits while decreasing usability. However, organizations may choose to establish certain rules for password generation (e.g., minimum character length for long passwords) under certain circumstances and can enforce this requirement in IA-5(1)(h). Account recovery can occur, for example, in situations when a password is forgotten. Cryptographically protected passwords include salted one-way cryptographic hashes of passwords. The list of commonly used, compromised, or expected passwords includes passwords obtained from previous breach corpuses, dictionary words, and repetitive or sequential characters. The list includes context-specific words, such as the name of the service, username, and derivatives thereof.",
+          "id": "ia-5.1",
+          "parameters": [
+            {
+              "id": "ia-05.01_odp.01",
+              "label": "frequency"
+            },
+            {
+              "id": "ia-05.01_odp.02",
+              "label": "composition and complexity rules"
+            }
+          ],
+          "statement": [
+            {
+              "id": "ia-5.1_smt.a",
+              "prose": "Maintain a list of commonly-used, expected, or compromised passwords and update the list [parameter: frequency] and when organizational passwords are suspected to have been compromised directly or indirectly;"
+            },
+            {
+              "id": "ia-5.1_smt.b",
+              "prose": "Verify, when users create or update passwords, that the passwords are not found on the list of commonly-used, expected, or compromised passwords in IA-5(1)(a);"
+            },
+            {
+              "id": "ia-5.1_smt.c",
+              "prose": "Transmit passwords only over cryptographically-protected channels;"
+            },
+            {
+              "id": "ia-5.1_smt.d",
+              "prose": "Store passwords using an approved salted key derivation function, preferably using a keyed hash;"
+            },
+            {
+              "id": "ia-5.1_smt.e",
+              "prose": "Require immediate selection of a new password upon account recovery;"
+            },
+            {
+              "id": "ia-5.1_smt.f",
+              "prose": "Allow user selection of long passwords and passphrases, including spaces and all printable characters;"
+            },
+            {
+              "id": "ia-5.1_smt.g",
+              "prose": "Employ automated tools to assist the user in selecting strong password authenticators; and"
+            },
+            {
+              "id": "ia-5.1_smt.h",
+              "prose": "Enforce the following composition and complexity rules: [parameter: composition and complexity rules]."
+            }
+          ],
+          "title": "Password-based Authentication"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Public key cryptography is a valid authentication mechanism for individuals, machines, and devices. For PKI solutions, status information for certification paths includes certificate revocation lists or certificate status protocol responses. For PIV cards, certificate validation involves the construction and verification of a certification path to the Common Policy Root trust anchor, which includes certificate policy processing. Implementing a local cache of revocation data to support path discovery and validation also supports system availability in situations where organizations are unable to access revocation information via the network.",
+          "id": "ia-5.2",
+          "statement": [
+            {
+              "children": [
+                {
+                  "id": "ia-5.2_smt.a.1",
+                  "prose": "Enforce authorized access to the corresponding private key; and"
+                },
+                {
+                  "id": "ia-5.2_smt.a.2",
+                  "prose": "Map the authenticated identity to the account of the individual or group; and"
+                }
+              ],
+              "id": "ia-5.2_smt.a",
+              "prose": "For public key-based authentication:"
+            },
+            {
+              "children": [
+                {
+                  "id": "ia-5.2_smt.b.1",
+                  "prose": "Validate certificates by constructing and verifying a certification path to an accepted trust anchor, including checking certificate status information; and"
+                },
+                {
+                  "id": "ia-5.2_smt.b.2",
+                  "prose": "Implement a local cache of revocation data to support path discovery and validation."
+                }
+              ],
+              "id": "ia-5.2_smt.b",
+              "prose": "When public key infrastructure (PKI) is used:"
+            }
+          ],
+          "title": "Public Key-based Authentication"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-5.3",
+          "title": "In-person or Trusted External Party Registration"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-5.4",
+          "title": "Automated Support for Password Strength Determination"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Changing authenticators prior to the delivery and installation of system components extends the requirement for organizations to change default authenticators upon system installation by requiring developers and/or installers to provide unique authenticators or change default authenticators for system components prior to delivery and/or installation. However, it typically does not apply to developers of commercial off-the-shelf information technology products. Requirements for unique authenticators can be included in acquisition documents prepared by organizations when procuring systems or system components.",
+          "id": "ia-5.5",
+          "title": "Change Authenticators Prior to Delivery"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "For systems that contain multiple security categories of information without reliable physical or logical separation between categories, authenticators used to grant access to the systems are protected commensurate with the highest security category of information on the systems. Security categories of information are determined as part of the security categorization process.",
+          "id": "ia-5.6",
+          "title": "Protection of Authenticators"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "In addition to applications, other forms of static storage include access scripts and function keys. Organizations exercise caution when determining whether embedded or stored authenticators are in encrypted or unencrypted form. If authenticators are used in the manner stored, then those representations are considered unencrypted authenticators.",
+          "id": "ia-5.7",
+          "title": "No Embedded Unencrypted Static Authenticators"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "When individuals have accounts on multiple systems and use the same authenticators such as passwords, there is the risk that a compromise of one account may lead to the compromise of other accounts. Alternative approaches include having different authenticators (passwords) on all systems, employing a single sign-on or federation mechanism, or using some form of one-time passwords on all systems. Organizations can also use rules of behavior (see [PL-4](#pl-4) ) and access agreements (see [PS-6](#ps-6) ) to mitigate the risk of multiple system accounts.",
+          "id": "ia-5.8",
+          "parameters": [
+            {
+              "id": "ia-05.08_odp",
+              "label": "security controls"
+            }
+          ],
+          "title": "Multiple System Accounts"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Federation provides organizations with the capability to authenticate individuals and devices when conducting cross-organization activities involving the processing, storage, or transmission of information. Using a specific list of approved external organizations for authentication helps to ensure that those organizations are vetted and trusted.",
+          "id": "ia-5.9",
+          "parameters": [
+            {
+              "id": "ia-05.09_odp",
+              "label": "external organizations"
+            }
+          ],
+          "title": "Federated Credential Management"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Authentication requires some form of binding between an identity and the authenticator that is used to confirm the identity. In conventional approaches, binding is established by pre-provisioning both the identity and the authenticator to the system. For example, the binding between a username (i.e., identity) and a password (i.e., authenticator) is accomplished by provisioning the identity and authenticator as a pair in the system. New authentication techniques allow the binding between the identity and the authenticator to be implemented external to a system. For example, with smartcard credentials, the identity and authenticator are bound together on the smartcard. Using these credentials, systems can authenticate identities that have not been pre-provisioned, dynamically provisioning the identity after authentication. In these situations, organizations can anticipate the dynamic provisioning of identities. Pre-established trust relationships and mechanisms with appropriate authorities to validate identities and related credentials are essential.",
+          "id": "ia-5.10",
+          "parameters": [
+            {
+              "id": "ia-05.10_odp",
+              "label": "binding rules"
+            }
+          ],
+          "title": "Dynamic Credential Binding"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-5.11",
+          "title": "Hardware Token-based Authentication"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Unlike password-based authentication, which provides exact matches of user-input passwords to stored passwords, biometric authentication does not provide exact matches. Depending on the type of biometric and the type of collection mechanism, there is likely to be some divergence from the presented biometric and the stored biometric that serves as the basis for comparison. Matching performance is the rate at which a biometric algorithm correctly results in a match for a genuine user and rejects other users. Biometric performance requirements include the match rate, which reflects the accuracy of the biometric matching algorithm used by a system.",
+          "id": "ia-5.12",
+          "parameters": [
+            {
+              "id": "ia-05.12_odp",
+              "label": "biometric quality requirements"
+            }
+          ],
+          "title": "Biometric Authentication Performance"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Cached authenticators are used to authenticate to the local machine when the network is not available. If cached authentication information is out of date, the validity of the authentication information may be questionable.",
+          "id": "ia-5.13",
+          "parameters": [
+            {
+              "id": "ia-05.13_odp",
+              "label": "time period"
+            }
+          ],
+          "title": "Expiration of Cached Authenticators"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "An organization-wide methodology for managing the content of PKI trust stores helps improve the accuracy and currency of PKI-based authentication credentials across the organization.",
+          "id": "ia-5.14",
+          "title": "Managing Content of PKI Trust Stores"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "General Services Administration (GSA)-approved products and services are products and services that have been approved through the GSA conformance program, where applicable, and posted to the GSA Approved Products List. GSA provides guidance for teams to design and build functional and secure systems that comply with Federal Identity, Credential, and Access Management (FICAM) policies, technologies, and implementation patterns.",
+          "id": "ia-5.15",
+          "title": "GSA-approved Products and Services"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Issuing authenticators in person or by a trusted external party enhances and reinforces the trustworthiness of the identity proofing process.",
+          "id": "ia-5.16",
+          "parameters": [
+            {
+              "id": "ia-05.16_odp.01",
+              "label": "types of and/or specific authenticators"
+            },
+            {
+              "id": "ia-05.16_odp.02",
+              "label": "selection (one): in person | by a trusted external party"
+            },
+            {
+              "id": "ia-05.16_odp.03",
+              "label": "registration authority"
+            },
+            {
+              "id": "ia-05.16_odp.04",
+              "label": "personnel or roles"
+            }
+          ],
+          "title": "In-person or Trusted External Party Authenticator Issuance"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Biometric characteristics do not constitute secrets. Such characteristics can be obtained by online web accesses, taking a picture of someone with a camera phone to obtain facial images with or without their knowledge, lifting from objects that someone has touched (e.g., a latent fingerprint), or capturing a high-resolution image (e.g., an iris pattern). Presentation attack detection technologies including liveness detection, can mitigate the risk of these types of attacks by making it difficult to produce artifacts intended to defeat the biometric sensor.",
+          "id": "ia-5.17",
+          "title": "Presentation Attack Detection for Biometric Authenticators"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "For systems where static passwords are employed, it is often a challenge to ensure that the passwords are suitably complex and that the same passwords are not employed on multiple systems. A password manager is a solution to this problem as it automatically generates and stores strong and different passwords for various accounts. A potential risk of using password managers is that adversaries can target the collection of passwords generated by the password manager. Therefore, the collection of passwords requires protection including encrypting the passwords (see [IA-5(1)(d)](#ia-5.1_smt.d) ) and storing the collection offline in a token.",
+          "id": "ia-5.18",
+          "parameters": [
+            {
+              "id": "ia-05.18_odp.01",
+              "label": "password managers"
+            },
+            {
+              "id": "ia-05.18_odp.02",
+              "label": "controls"
+            }
+          ],
+          "statement": [
+            {
+              "id": "ia-5.18_smt.a",
+              "prose": "Employ [parameter: password managers] to generate and manage passwords; and"
+            },
+            {
+              "id": "ia-5.18_smt.b",
+              "prose": "Protect the passwords using [parameter: controls]."
+            }
+          ],
+          "title": "Password Managers"
+        }
+      ],
+      "family_id": "ia",
+      "guidance": "Authenticators include passwords, cryptographic devices, biometrics, certificates, one-time password devices, and ID badges. Device authenticators include certificates and passwords. Initial authenticator content is the actual content of the authenticator (e.g., the initial password). In contrast, the requirements for authenticator content contain specific criteria or characteristics (e.g., minimum password length). Developers may deliver system components with factory default authentication credentials (i.e., passwords) to allow for initial installation and configuration. Default authentication credentials are often well known, easily discoverable, and present a significant risk. The requirement to protect individual authenticators may be implemented via control [PL-4](#pl-4) or [PS-6](#ps-6) for authenticators in the possession of individuals and by controls [AC-3](#ac-3), [AC-6](#ac-6) , and [SC-28](#sc-28) for authenticators stored in organizational systems, including passwords stored in hashed or encrypted formats or files containing encrypted or hashed passwords accessible with administrator privileges.\n\nSystems support authenticator management by organization-defined settings and restrictions for various authenticator characteristics (e.g., minimum password length, validation time window for time synchronous one-time tokens, and number of allowed rejections during the verification stage of biometric authentication). Actions can be taken to safeguard individual authenticators, including maintaining possession of authenticators, not sharing authenticators with others, and immediately reporting lost, stolen, or compromised authenticators. Authenticator management includes issuing and revoking authenticators for temporary access when no longer needed.",
+      "id": "ia-5",
+      "parameters": [
+        {
+          "id": "ia-05_odp.01",
+          "label": "time period by authenticator type"
+        },
+        {
+          "id": "ia-05_odp.02",
+          "label": "events"
+        }
+      ],
+      "statement": [
+        {
+          "id": "ia-5_smt.a",
+          "prose": "Verifying, as part of the initial authenticator distribution, the identity of the individual, group, role, service, or device receiving the authenticator;"
+        },
+        {
+          "id": "ia-5_smt.b",
+          "prose": "Establishing initial authenticator content for any authenticators issued by the organization;"
+        },
+        {
+          "id": "ia-5_smt.c",
+          "prose": "Ensuring that authenticators have sufficient strength of mechanism for their intended use;"
+        },
+        {
+          "id": "ia-5_smt.d",
+          "prose": "Establishing and implementing administrative procedures for initial authenticator distribution, for lost or compromised or damaged authenticators, and for revoking authenticators;"
+        },
+        {
+          "id": "ia-5_smt.e",
+          "prose": "Changing default authenticators prior to first use;"
+        },
+        {
+          "id": "ia-5_smt.f",
+          "prose": "Changing or refreshing authenticators [parameter: time period by authenticator type] or when [parameter: events] occur;"
+        },
+        {
+          "id": "ia-5_smt.g",
+          "prose": "Protecting authenticator content from unauthorized disclosure and modification;"
+        },
+        {
+          "id": "ia-5_smt.h",
+          "prose": "Requiring individuals to take, and having devices implement, specific controls to protect authenticators; and"
+        },
+        {
+          "id": "ia-5_smt.i",
+          "prose": "Changing authenticators for group or role accounts when membership to those accounts changes."
+        }
+      ],
+      "title": "Authenticator Management"
+    },
+    {
+      "family_id": "ia",
+      "guidance": "Authentication feedback from systems does not provide information that would allow unauthorized individuals to compromise authentication mechanisms. For some types of systems, such as desktops or notebooks with relatively large monitors, the threat (referred to as shoulder surfing) may be significant. For other types of systems, such as mobile devices with small displays, the threat may be less significant and is balanced against the increased likelihood of typographic input errors due to small keyboards. Thus, the means for obscuring authentication feedback is selected accordingly. Obscuring authentication feedback includes displaying asterisks when users type passwords into input devices or displaying feedback for a very limited time before obscuring it.",
+      "id": "ia-6",
+      "title": "Authentication Feedback"
+    },
+    {
+      "family_id": "ia",
+      "guidance": "Authentication mechanisms may be required within a cryptographic module to authenticate an operator accessing the module and to verify that the operator is authorized to assume the requested role and perform services within that role.",
+      "id": "ia-7",
+      "title": "Cryptographic Module Authentication"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ia",
+          "guidance": "Acceptance of Personal Identity Verification (PIV) credentials from other federal agencies applies to both logical and physical access control systems. PIV credentials are those credentials issued by federal agencies that conform to FIPS Publication 201 and supporting guidelines. The adequacy and reliability of PIV card issuers are addressed and authorized using [SP 800-79-2](#10963761-58fc-4b20-b3d6-b44a54daba03).",
+          "id": "ia-8.1",
+          "title": "Acceptance of PIV Credentials from Other Agencies"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Acceptance of only NIST-compliant external authenticators applies to organizational systems that are accessible to the public (e.g., public-facing websites). External authenticators are issued by nonfederal government entities and are compliant with [SP 800-63B](#e59c5a7c-8b1f-49ca-8de0-6ee0882180ce) . Approved external authenticators meet or exceed the minimum Federal Government-wide technical, security, privacy, and organizational maturity requirements. Meeting or exceeding Federal requirements allows Federal Government relying parties to trust external authenticators in connection with an authentication transaction at a specified authenticator assurance level.",
+          "id": "ia-8.2",
+          "statement": [
+            {
+              "id": "ia-8.2_smt.a",
+              "prose": "Accept only external authenticators that are NIST-compliant; and"
+            },
+            {
+              "id": "ia-8.2_smt.b",
+              "prose": "Document and maintain a list of accepted external authenticators."
+            }
+          ],
+          "title": "Acceptance of External Authenticators"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-8.3",
+          "title": "Use of FICAM-approved Products"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Organizations define profiles for identity management based on open identity management standards. To ensure that open identity management standards are viable, robust, reliable, sustainable, and interoperable as documented, the Federal Government assesses and scopes the standards and technology implementations against applicable laws, executive orders, directives, policies, regulations, standards, and guidelines.",
+          "id": "ia-8.4",
+          "parameters": [
+            {
+              "id": "ia-08.04_odp",
+              "label": "identity management profiles"
+            }
+          ],
+          "title": "Use of Defined Profiles"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Acceptance of PIV-I credentials can be implemented by PIV, PIV-I, and other commercial or external identity providers. The acceptance and verification of PIV-I-compliant credentials apply to both logical and physical access control systems. The acceptance and verification of PIV-I credentials address nonfederal issuers of identity cards that desire to interoperate with United States Government PIV systems and that can be trusted by Federal Government-relying parties. The X.509 certificate policy for the Federal Bridge Certification Authority (FBCA) addresses PIV-I requirements. The PIV-I card is commensurate with the PIV credentials as defined in cited references. PIV-I credentials are the credentials issued by a PIV-I provider whose PIV-I certificate policy maps to the Federal Bridge PIV-I Certificate Policy. A PIV-I provider is cross-certified with the FBCA (directly or through another PKI bridge) with policies that have been mapped and approved as meeting the requirements of the PIV-I policies defined in the FBCA certificate policy.",
+          "id": "ia-8.5",
+          "parameters": [
+            {
+              "id": "ia-08.05_odp",
+              "label": "policy"
+            }
+          ],
+          "title": "Acceptance of PIV-I Credentials"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Federated identity solutions can create increased privacy risks due to the tracking and profiling of individuals. Using identifier mapping tables or cryptographic techniques to blind credential service providers and relying parties from each other or to make identity attributes less visible to transmitting parties can reduce these privacy risks.",
+          "id": "ia-8.6",
+          "parameters": [
+            {
+              "id": "ia-08.06_odp",
+              "label": "measures"
+            }
+          ],
+          "title": "Disassociability"
+        }
+      ],
+      "family_id": "ia",
+      "guidance": "Non-organizational users include system users other than organizational users explicitly covered by [IA-2](#ia-2) . Non-organizational users are uniquely identified and authenticated for accesses other than those explicitly identified and documented in [AC-14](#ac-14) . Identification and authentication of non-organizational users accessing federal systems may be required to protect federal, proprietary, or privacy-related information (with exceptions noted for national security systems). Organizations consider many factors—including security, privacy, scalability, and practicality—when balancing the need to ensure ease of use for access to federal information and systems with the need to protect and adequately mitigate risk.",
+      "id": "ia-8",
+      "title": "Identification and Authentication (Non-organizational Users)"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ia",
+          "id": "ia-9.1",
+          "title": "Information Exchange"
+        },
+        {
+          "family_id": "ia",
+          "id": "ia-9.2",
+          "title": "Transmission of Decisions"
+        }
+      ],
+      "family_id": "ia",
+      "guidance": "Services that may require identification and authentication include web applications using digital certificates or services or applications that query a database. Identification and authentication methods for system services and applications include information or code signing, provenance graphs, and electronic signatures that indicate the sources of services. Decisions regarding the validity of identification and authentication claims can be made by services separate from the services acting on those decisions. This can occur in distributed system architectures. In such situations, the identification and authentication decisions (instead of actual identifiers and authentication data) are provided to the services that need to act on those decisions.",
+      "id": "ia-9",
+      "parameters": [
+        {
+          "id": "ia-09_odp",
+          "label": "system services and applications"
+        }
+      ],
+      "title": "Service Identification and Authentication"
+    },
+    {
+      "family_id": "ia",
+      "guidance": "Adversaries may compromise individual authentication mechanisms employed by organizations and subsequently attempt to impersonate legitimate users. To address this threat, organizations may employ specific techniques or mechanisms and establish protocols to assess suspicious behavior. Suspicious behavior may include accessing information that individuals do not typically access as part of their duties, roles, or responsibilities; accessing greater quantities of information than individuals would routinely access; or attempting to access information from suspicious network addresses. When pre-established conditions or triggers occur, organizations can require individuals to provide additional authentication information. Another potential use for adaptive authentication is to increase the strength of mechanism based on the number or types of records being accessed. Adaptive authentication does not replace and is not used to avoid the use of multi-factor authentication mechanisms but can augment implementations of multi-factor authentication.",
+      "id": "ia-10",
+      "parameters": [
+        {
+          "id": "ia-10_odp.01",
+          "label": "supplemental authentication techniques or mechanisms"
+        },
+        {
+          "id": "ia-10_odp.02",
+          "label": "circumstances or situations"
+        }
+      ],
+      "title": "Adaptive Authentication"
+    },
+    {
+      "family_id": "ia",
+      "guidance": "In addition to the re-authentication requirements associated with device locks, organizations may require re-authentication of individuals in certain situations, including when roles, authenticators or credentials change, when security categories of systems change, when the execution of privileged functions occurs, after a fixed time period, or periodically.",
+      "id": "ia-11",
+      "parameters": [
+        {
+          "id": "ia-11_odp",
+          "label": "circumstances or situations"
+        }
+      ],
+      "title": "Re-authentication"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ia",
+          "guidance": "Including supervisor or sponsor authorization as part of the registration process provides an additional level of scrutiny to ensure that the user’s management chain is aware of the account, the account is essential to carry out organizational missions and functions, and the user’s privileges are appropriate for the anticipated responsibilities and authorities within the organization.",
+          "id": "ia-12.1",
+          "title": "Supervisor Authorization"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Identity evidence, such as documentary evidence or a combination of documents and biometrics, reduces the likelihood of individuals using fraudulent identification to establish an identity or at least increases the work factor of potential adversaries. The forms of acceptable evidence are consistent with the risks to the systems, roles, and privileges associated with the user’s account.",
+          "id": "ia-12.2",
+          "title": "Identity Evidence"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "Validation and verification of identity evidence increases the assurance that accounts and identifiers are being established for the correct user and authenticators are being bound to that user. Validation refers to the process of confirming that the evidence is genuine and authentic, and the data contained in the evidence is correct, current, and related to an individual. Verification confirms and establishes a linkage between the claimed identity and the actual existence of the user presenting the evidence. Acceptable methods for validating and verifying identity evidence are consistent with the risks to the systems, roles, and privileges associated with the users account.",
+          "id": "ia-12.3",
+          "parameters": [
+            {
+              "id": "ia-12.03_odp",
+              "label": "methods of validation and verification"
+            }
+          ],
+          "title": "Identity Evidence Validation and Verification"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "In-person proofing reduces the likelihood of fraudulent credentials being issued because it requires the physical presence of individuals, the presentation of physical identity documents, and actual face-to-face interactions with designated registration authorities.",
+          "id": "ia-12.4",
+          "title": "In-person Validation and Verification"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "To make it more difficult for adversaries to pose as legitimate users during the identity proofing process, organizations can use out-of-band methods to ensure that the individual associated with an address of record is the same individual that participated in the registration. Confirmation can take the form of a temporary enrollment code or a notice of proofing. The delivery address for these artifacts is obtained from records and not self-asserted by the user. The address can include a physical or digital address. A home address is an example of a physical address. Email addresses and telephone numbers are examples of digital addresses.",
+          "id": "ia-12.5",
+          "parameters": [
+            {
+              "id": "ia-12.05_odp",
+              "label": "selection (one): registration code | notice of proofing"
+            }
+          ],
+          "title": "Address Confirmation"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "To limit unnecessary re-proofing of identities, particularly of non-PIV users, organizations accept proofing conducted at a commensurate level of assurance by other agencies or organizations. Proofing is consistent with organizational security policy and the identity assurance level appropriate for the system, application, or information accessed. Accepting externally-proofed identities is a fundamental component of managing federated identities across agencies and organizations.",
+          "id": "ia-12.6",
+          "parameters": [
+            {
+              "id": "ia-12.06_odp",
+              "label": "identity assurance level"
+            }
+          ],
+          "title": "Accept Externally-proofed Identities"
+        }
+      ],
+      "family_id": "ia",
+      "guidance": "Identity proofing is the process of collecting, validating, and verifying a user’s identity information for the purposes of establishing credentials for accessing a system. Identity proofing is intended to mitigate threats to the registration of users and the establishment of their accounts. Standards and guidelines specifying identity assurance levels for identity proofing include [SP 800-63-3](#737513fa-6758-403f-831d-5ddab5e23cb3) and [SP 800-63A](#9099ed2c-922a-493d-bcb4-d896192243ff) . Organizations may be subject to laws, executive orders, directives, regulations, or policies that address the collection of identity evidence. Organizational personnel consult with the senior agency official for privacy and legal counsel regarding such requirements.",
+      "id": "ia-12",
+      "statement": [
+        {
+          "id": "ia-12_smt.a",
+          "prose": "Identity proof users that require accounts for logical access to systems based on appropriate identity assurance level requirements as specified in applicable standards and guidelines;"
+        },
+        {
+          "id": "ia-12_smt.b",
+          "prose": "Resolve user identities to a unique individual; and"
+        },
+        {
+          "id": "ia-12_smt.c",
+          "prose": "Collect, validate, and verify identity evidence."
+        }
+      ],
+      "title": "Identity Proofing"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ia",
+          "guidance": "Identity assertions and access tokens are typically digitally signed. The private keys used to sign these assertions and tokens are protected commensurate with the impact of the system and information resources that can be accessed.",
+          "id": "ia-13.1",
+          "title": "Protection of Cryptographic Keys"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "This includes verification of digital signatures protecting identity assertions and access tokens, as well as included metadata. Metadata includes information about the access request such as information unique to user, system or information resource being accessed, or the transaction itself such as time. Protected system and information resources could include connected networks, applications, and APIs.",
+          "id": "ia-13.2",
+          "title": "Verification of Identity Assertions and Access Tokens"
+        },
+        {
+          "family_id": "ia",
+          "guidance": "An access token is a piece of data that represents the authorization granted to a user or NPE to access specific systems or information resources. Access tokens enable controlled access to services and resources. Properly managing the lifecycle of access tokens, including their issuance, validation, and revocation, is crucial to maintaining confidentiality of data and systems. Restricting token validity to a specific audience, e.g., an application or security domain, and restricting token validity lifetimes are important practices. Access tokens are revoked or invalidated if they are compromised, lost, or are no longer needed to mitigate the risks associated with stolen or misused tokens.",
+          "id": "ia-13.3",
+          "statement": [
+            {
+              "id": "ia-13.3_smt.a",
+              "prose": "generated;"
+            },
+            {
+              "id": "ia-13.3_smt.b",
+              "prose": "issued;"
+            },
+            {
+              "id": "ia-13.3_smt.c",
+              "prose": "refreshed;"
+            },
+            {
+              "id": "ia-13.3_smt.d",
+              "prose": "revoked;"
+            },
+            {
+              "id": "ia-13.3_smt.e",
+              "prose": "time-restricted; and"
+            },
+            {
+              "id": "ia-13.3_smt.f",
+              "prose": "audience-restricted."
+            }
+          ],
+          "title": "Token Management"
+        }
+      ],
+      "family_id": "ia",
+      "guidance": "Identity providers, both internal and external to the organization, manage the user, device, and NPE authenticators and issue statements, often called identity assertions, attesting to identities of other systems or systems components. Authorization servers create and issue access tokens to identified and authenticated users and devices that can be used to gain access to system or information resources. For example, single sign-on (SSO) provides identity provider and authorization server functions. Authenticator management (to include credential management) is covered by IA-05.",
+      "id": "ia-13",
+      "parameters": [
+        {
+          "id": "ia-13_odp.01",
+          "label": "policy"
+        },
+        {
+          "id": "ia-13_odp.02",
+          "label": "mechanisms"
+        }
+      ],
+      "title": "Identity Providers and Authorization Servers"
+    }
+  ],
+  "family_id": "ia",
+  "family_title": "Identification and Authentication"
+}

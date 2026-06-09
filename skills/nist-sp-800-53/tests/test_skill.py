@@ -45,3 +45,24 @@ def test_has_canonical_source():
     fw = find_framework(FRAMEWORK_ID)
     sources = load_yaml(fw["sources"])
     assert len(sources.get("canonical_sources", [])) >= 1
+
+
+def test_structured_reference_content():
+    """800-53 bundles the full OSCAL-derived control catalog as references."""
+    import json
+
+    fw = find_framework(FRAMEWORK_ID)
+    profile = load_yaml(fw["profile"])
+    assert profile.get("content_mode") == "structured"
+    index_path = REPO_ROOT / fw["skill_dir"] / profile["reference_index"]
+    assert index_path.is_file(), "reference index missing; run references/ingest.py"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    assert str(index["version"]) == str(fw["version"])
+    # 800-53 has 20 control families; spot-check a known one is present and non-empty.
+    fam_ids = {f["id"] for f in index["families"]}
+    assert {"ac", "au", "sc", "si"} <= fam_ids, fam_ids
+    ac_file = index_path.parent / next(f["file"] for f in index["families"] if f["id"] == "ac")
+    ac = json.loads(ac_file.read_text(encoding="utf-8"))
+    ac1 = next(c for c in ac["controls"] if c["id"] == "ac-1")
+    assert ac1["title"]
+    assert ac1.get("guidance")

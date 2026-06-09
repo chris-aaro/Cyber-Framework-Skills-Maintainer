@@ -54,7 +54,9 @@ def load_json(path: str | Path) -> Any:
 
 def dump_json(path: str | Path, obj: Any) -> None:
     """Write JSON with stable, diff-friendly formatting (trailing newline)."""
-    with open(resolve(path), "w", encoding="utf-8") as fh:
+    target = resolve(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with open(target, "w", encoding="utf-8") as fh:
         json.dump(obj, fh, indent=2, sort_keys=True, ensure_ascii=False)
         fh.write("\n")
 

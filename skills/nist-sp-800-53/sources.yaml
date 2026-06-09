@@ -57,3 +57,15 @@ related_sources:
     description: "Official OSCAL machine-readable catalog content repository."
     expected_metadata:
       title_contains: "oscal"
+
+# Structured content ingested into references/ by references/ingest.py.
+# The OSCAL catalog is the authoritative machine-readable form of the controls;
+# it is public-domain U.S. government work, so it is bundled (transformed/split)
+# into this skill for faithful, citable [OFFICIAL] reference.
+structured_content:
+  - id: sp800-53-oscal-catalog
+    url: "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json"
+    format: json
+    transform: oscal_catalog_split
+    output_dir: references
+    description: "OSCAL catalog of SP 800-53 Rev. 5 controls (and 800-53A procedures)."

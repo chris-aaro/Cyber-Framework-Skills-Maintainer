@@ -1,0 +1,766 @@
+{
+  "controls": [
+    {
+      "family_id": "ir",
+      "guidance": "Incident response policy and procedures address the controls in the IR family that are implemented within systems and organizations. The risk management strategy is an important factor in establishing such policies and procedures. Policies and procedures contribute to security and privacy assurance. Therefore, it is important that security and privacy programs collaborate on the development of incident response policy and procedures. Security and privacy program policies and procedures at the organization level are preferable, in general, and may obviate the need for mission- or system-specific policies and procedures. The policy can be included as part of the general security and privacy policy or be represented by multiple policies that reflect the complex nature of organizations. Procedures can be established for security and privacy programs, for mission or business processes, and for systems, if needed. Procedures describe how the policies or controls are implemented and can be directed at the individual or role that is the object of the procedure. Procedures can be documented in system security and privacy plans or in one or more separate documents. Events that may precipitate an update to incident response policy and procedures include assessment or audit findings, security incidents or breaches, or changes in laws, executive orders, directives, regulations, policies, standards, and guidelines. Simply restating controls does not constitute an organizational policy or procedure.",
+      "id": "ir-1",
+      "parameters": [
+        {
+          "id": "ir-1_prm_1",
+          "label": "organization-defined personnel or roles"
+        },
+        {
+          "id": "ir-01_odp.01",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ir-01_odp.02",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ir-01_odp.03",
+          "label": "selection (one or more): organization-level | mission/business process-level | system-level"
+        },
+        {
+          "id": "ir-01_odp.04",
+          "label": "official"
+        },
+        {
+          "id": "ir-01_odp.05",
+          "label": "frequency"
+        },
+        {
+          "id": "ir-01_odp.06",
+          "label": "events"
+        },
+        {
+          "id": "ir-01_odp.07",
+          "label": "frequency"
+        },
+        {
+          "id": "ir-01_odp.08",
+          "label": "events"
+        }
+      ],
+      "statement": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "id": "ir-1_smt.a.1.a",
+                  "prose": "Addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and"
+                },
+                {
+                  "id": "ir-1_smt.a.1.b",
+                  "prose": "Is consistent with applicable laws, executive orders, directives, regulations, policies, standards, and guidelines; and"
+                }
+              ],
+              "id": "ir-1_smt.a.1",
+              "prose": "[parameter: selection (one or more): organization-level | mission/business process-level | system-level] incident response policy that:"
+            },
+            {
+              "id": "ir-1_smt.a.2",
+              "prose": "Procedures to facilitate the implementation of the incident response policy and the associated incident response controls;"
+            }
+          ],
+          "id": "ir-1_smt.a",
+          "prose": "Develop, document, and disseminate to [parameter: organization-defined personnel or roles]:"
+        },
+        {
+          "id": "ir-1_smt.b",
+          "prose": "Designate an [parameter: official] to manage the development, documentation, and dissemination of the incident response policy and procedures; and"
+        },
+        {
+          "children": [
+            {
+              "id": "ir-1_smt.c.1",
+              "prose": "Policy [parameter: frequency] and following [parameter: events] ; and"
+            },
+            {
+              "id": "ir-1_smt.c.2",
+              "prose": "Procedures [parameter: frequency] and following [parameter: events]."
+            }
+          ],
+          "id": "ir-1_smt.c",
+          "prose": "Review and update the current incident response:"
+        }
+      ],
+      "title": "Policy and Procedures"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ir",
+          "guidance": "Organizations establish requirements for responding to incidents in incident response plans. Incorporating simulated events into incident response training helps to ensure that personnel understand their individual responsibilities and what specific actions to take in crisis situations.",
+          "id": "ir-2.1",
+          "title": "Simulated Events"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Automated mechanisms can provide a more thorough and realistic incident response training environment. This can be accomplished, for example, by providing more complete coverage of incident response issues, selecting more realistic training scenarios and environments, and stressing the response capability.",
+          "id": "ir-2.2",
+          "parameters": [
+            {
+              "id": "ir-02.02_odp",
+              "label": "automated mechanisms"
+            }
+          ],
+          "title": "Automated Training Environments"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "For federal agencies, an incident that involves personally identifiable information is considered a breach. A breach results in the loss of control, compromise, unauthorized disclosure, unauthorized acquisition, or a similar occurrence where a person other than an authorized user accesses or potentially accesses personally identifiable information or an authorized user accesses or potentially accesses such information for other than authorized purposes. The incident response training emphasizes the obligation of individuals to report both confirmed and suspected breaches involving information in any medium or form, including paper, oral, and electronic. Incident response training includes tabletop exercises that simulate a breach. See [IR-2(1)](#ir-2.1).",
+          "id": "ir-2.3",
+          "title": "Breach"
+        }
+      ],
+      "family_id": "ir",
+      "guidance": "Incident response training is associated with the assigned roles and responsibilities of organizational personnel to ensure that the appropriate content and level of detail are included in such training. For example, users may only need to know who to call or how to recognize an incident; system administrators may require additional training on how to handle incidents; and incident responders may receive more specific training on forensics, data collection techniques, reporting, system recovery, and system restoration. Incident response training includes user training in identifying and reporting suspicious activities from external and internal sources. Incident response training for users may be provided as part of [AT-2](#at-2) or [AT-3](#at-3) . Events that may precipitate an update to incident response training content include, but are not limited to, incident response plan testing or response to an actual incident (lessons learned), assessment or audit findings, or changes in applicable laws, executive orders, directives, regulations, policies, standards, and guidelines.",
+      "id": "ir-2",
+      "parameters": [
+        {
+          "id": "ir-02_odp.01",
+          "label": "time period"
+        },
+        {
+          "id": "ir-02_odp.02",
+          "label": "frequency"
+        },
+        {
+          "id": "ir-02_odp.03",
+          "label": "frequency"
+        },
+        {
+          "id": "ir-02_odp.04",
+          "label": "events"
+        }
+      ],
+      "statement": [
+        {
+          "children": [
+            {
+              "id": "ir-2_smt.a.1",
+              "prose": "Within [parameter: time period] of assuming an incident response role or responsibility or acquiring system access;"
+            },
+            {
+              "id": "ir-2_smt.a.2",
+              "prose": "When required by system changes; and"
+            },
+            {
+              "id": "ir-2_smt.a.3",
+              "prose": "[parameter: frequency] thereafter; and"
+            }
+          ],
+          "id": "ir-2_smt.a",
+          "prose": "Provide incident response training to system users consistent with assigned roles and responsibilities:"
+        },
+        {
+          "id": "ir-2_smt.b",
+          "prose": "Review and update incident response training content [parameter: frequency] and following [parameter: events]."
+        }
+      ],
+      "title": "Incident Response Training"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ir",
+          "guidance": "Organizations use automated mechanisms to more thoroughly and effectively test incident response capabilities. This can be accomplished by providing more complete coverage of incident response issues, selecting realistic test scenarios and environments, and stressing the response capability.",
+          "id": "ir-3.1",
+          "parameters": [
+            {
+              "id": "ir-03.01_odp",
+              "label": "automated mechanisms"
+            }
+          ],
+          "title": "Automated Testing"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Organizational plans related to incident response testing include business continuity plans, disaster recovery plans, continuity of operations plans, contingency plans, crisis communications plans, critical infrastructure plans, and occupant emergency plans.",
+          "id": "ir-3.2",
+          "title": "Coordination with Related Plans"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "To help incident response activities function as intended, organizations may use metrics and evaluation criteria to assess incident response programs as part of an effort to continually improve response performance. These efforts facilitate improvement in incident response efficacy and lessen the impact of incidents.",
+          "id": "ir-3.3",
+          "statement": [
+            {
+              "id": "ir-3.3_smt.a",
+              "prose": "Determine the effectiveness of incident response processes;"
+            },
+            {
+              "id": "ir-3.3_smt.b",
+              "prose": "Continuously improve incident response processes; and"
+            },
+            {
+              "id": "ir-3.3_smt.c",
+              "prose": "Provide incident response measures and metrics that are accurate, consistent, and in a reproducible format."
+            }
+          ],
+          "title": "Continuous Improvement"
+        }
+      ],
+      "family_id": "ir",
+      "guidance": "Organizations test incident response capabilities to determine their effectiveness and identify potential weaknesses or deficiencies. Incident response testing includes the use of checklists, walk-through or tabletop exercises, and simulations (parallel or full interrupt). Incident response testing can include a determination of the effects on organizational operations and assets and individuals due to incident response. The use of qualitative and quantitative data aids in determining the effectiveness of incident response processes.",
+      "id": "ir-3",
+      "parameters": [
+        {
+          "id": "ir-03_odp.01",
+          "label": "frequency"
+        },
+        {
+          "id": "ir-03_odp.02",
+          "label": "tests"
+        }
+      ],
+      "title": "Incident Response Testing"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ir",
+          "guidance": "Automated mechanisms that support incident handling processes include online incident management systems and tools that support the collection of live response data, full network packet capture, and forensic analysis.",
+          "id": "ir-4.1",
+          "parameters": [
+            {
+              "id": "ir-04.01_odp",
+              "label": "automated mechanisms"
+            }
+          ],
+          "title": "Automated Incident Handling Processes"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Dynamic reconfiguration includes changes to router rules, access control lists, intrusion detection or prevention system parameters, and filter rules for guards or firewalls. Organizations may perform dynamic reconfiguration of systems to stop attacks, misdirect attackers, and isolate components of systems, thus limiting the extent of the damage from breaches or compromises. Organizations include specific time frames for achieving the reconfiguration of systems in the definition of the reconfiguration capability, considering the potential need for rapid response to effectively address cyber threats.",
+          "id": "ir-4.2",
+          "parameters": [
+            {
+              "id": "ir-04.02_odp.01",
+              "label": "types of dynamic reconfiguration"
+            },
+            {
+              "id": "ir-04.02_odp.02",
+              "label": "system components"
+            }
+          ],
+          "title": "Dynamic Reconfiguration"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Classes of incidents include malfunctions due to design or implementation errors and omissions, targeted malicious attacks, and untargeted malicious attacks. Incident response actions include orderly system degradation, system shutdown, fall back to manual mode or activation of alternative technology whereby the system operates differently, employing deceptive measures, alternate information flows, or operating in a mode that is reserved for when systems are under attack. Organizations consider whether continuity of operations requirements during an incident conflict with the capability to automatically disable the system as specified as part of [IR-4(5)](#ir-4.5).",
+          "id": "ir-4.3",
+          "parameters": [
+            {
+              "id": "ir-04.03_odp.01",
+              "label": "classes of incidents"
+            },
+            {
+              "id": "ir-04.03_odp.02",
+              "label": "actions"
+            }
+          ],
+          "title": "Continuity of Operations"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Sometimes, a threat event, such as a hostile cyber-attack, can only be observed by bringing together information from different sources, including various reports and reporting procedures established by organizations.",
+          "id": "ir-4.4",
+          "title": "Information Correlation"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Organizations consider whether the capability to automatically disable the system conflicts with continuity of operations requirements specified as part of [CP-2](#cp-2) or [IR-4(3)](#ir-4.3) . Security violations include cyber-attacks that have compromised the integrity of the system or exfiltrated organizational information and serious errors in software programs that could adversely impact organizational missions or functions or jeopardize the safety of individuals.",
+          "id": "ir-4.5",
+          "parameters": [
+            {
+              "id": "ir-04.05_odp",
+              "label": "security violations"
+            }
+          ],
+          "title": "Automatic Disabling of System"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Explicit focus on handling incidents involving insider threats provides additional emphasis on this type of threat and the need for specific incident handling capabilities to provide appropriate and timely responses.",
+          "id": "ir-4.6",
+          "title": "Insider Threats"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Incident handling for insider threat incidents (e.g., preparation, detection and analysis, containment, eradication, and recovery) requires coordination among many organizational entities, including mission or business owners, system owners, human resources offices, procurement offices, personnel offices, physical security offices, senior agency information security officer, operations personnel, risk executive (function), senior agency official for privacy, and legal counsel. In addition, organizations may require external support from federal, state, and local law enforcement agencies.",
+          "id": "ir-4.7",
+          "parameters": [
+            {
+              "id": "ir-04.07_odp",
+              "label": "entities"
+            }
+          ],
+          "title": "Insider Threats — Intra-organization Coordination"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "The coordination of incident information with external organizations—including mission or business partners, military or coalition partners, customers, and developers—can provide significant benefits. Cross-organizational coordination can serve as an important risk management capability. This capability allows organizations to leverage information from a variety of sources to effectively respond to incidents and breaches that could potentially affect the organization’s operations, assets, and individuals.",
+          "id": "ir-4.8",
+          "parameters": [
+            {
+              "id": "ir-04.08_odp.01",
+              "label": "external organizations"
+            },
+            {
+              "id": "ir-04.08_odp.02",
+              "label": "incident information"
+            }
+          ],
+          "title": "Correlation with External Organizations"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "The dynamic response capability addresses the timely deployment of new or replacement organizational capabilities in response to incidents. This includes capabilities implemented at the mission and business process level and at the system level.",
+          "id": "ir-4.9",
+          "parameters": [
+            {
+              "id": "ir-04.09_odp",
+              "label": "dynamic response capabilities"
+            }
+          ],
+          "title": "Dynamic Response Capability"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Organizations involved in supply chain activities include product developers, system integrators, manufacturers, packagers, assemblers, distributors, vendors, and resellers. Supply chain incidents can occur anywhere through or to the supply chain and include compromises or breaches that involve primary or sub-tier providers, information technology products, system components, development processes or personnel, and distribution processes or warehousing facilities. Organizations consider including processes for protecting and sharing incident information in information exchange agreements and their obligations for reporting incidents to government oversight bodies (e.g., Federal Acquisition Security Council).",
+          "id": "ir-4.10",
+          "title": "Supply Chain Coordination"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "An integrated incident response team is a team of experts that assesses, documents, and responds to incidents so that organizational systems and networks can recover quickly and implement the necessary controls to avoid future incidents. Incident response team personnel include forensic and malicious code analysts, tool developers, systems security and privacy engineers, and real-time operations personnel. The incident handling capability includes performing rapid forensic preservation of evidence and analysis of and response to intrusions. For some organizations, the incident response team can be a cross-organizational entity.\n\nAn integrated incident response team facilitates information sharing and allows organizational personnel (e.g., developers, implementers, and operators) to leverage team knowledge of the threat and implement defensive measures that enable organizations to deter intrusions more effectively. Moreover, integrated teams promote the rapid detection of intrusions, the development of appropriate mitigations, and the deployment of effective defensive measures. For example, when an intrusion is detected, the integrated team can rapidly develop an appropriate response for operators to implement, correlate the new incident with information on past intrusions, and augment ongoing cyber intelligence development. Integrated incident response teams are better able to identify adversary tactics, techniques, and procedures that are linked to the operations tempo or specific mission and business functions and to define responsive actions in a way that does not disrupt those mission and business functions. Incident response teams can be distributed within organizations to make the capability resilient.",
+          "id": "ir-4.11",
+          "parameters": [
+            {
+              "id": "ir-04.11_odp",
+              "label": "time period"
+            }
+          ],
+          "title": "Integrated Incident Response Team"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "When conducted carefully in an isolated environment, analysis of malicious code and other residual artifacts of a security incident or breach can give the organization insight into adversary tactics, techniques, and procedures. It can also indicate the identity or some defining characteristics of the adversary. In addition, malicious code analysis can help the organization develop responses to future incidents.",
+          "id": "ir-4.12",
+          "title": "Malicious Code and Forensic Analysis"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "If the organization maintains a deception environment, an analysis of behaviors in that environment, including resources targeted by the adversary and timing of the incident or event, can provide insight into adversarial tactics, techniques, and procedures. External to a deception environment, the analysis of anomalous adversarial behavior (e.g., changes in system performance or usage patterns) or suspected behavior (e.g., changes in searches for the location of specific resources) can give the organization such insight.",
+          "id": "ir-4.13",
+          "parameters": [
+            {
+              "id": "ir-04.13_odp",
+              "label": "environments or resources"
+            }
+          ],
+          "title": "Behavior Analysis"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "A security operations center (SOC) is the focal point for security operations and computer network defense for an organization. The purpose of the SOC is to defend and monitor an organization’s systems and networks (i.e., cyber infrastructure) on an ongoing basis. The SOC is also responsible for detecting, analyzing, and responding to cybersecurity incidents in a timely manner. The organization staffs the SOC with skilled technical and operational personnel (e.g., security analysts, incident response personnel, systems security engineers) and implements a combination of technical, management, and operational controls (including monitoring, scanning, and forensics tools) to monitor, fuse, correlate, analyze, and respond to threat and security-relevant event data from multiple sources. These sources include perimeter defenses, network devices (e.g., routers, switches), and endpoint agent data feeds. The SOC provides a holistic situational awareness capability to help organizations determine the security posture of the system and organization. A SOC capability can be obtained in a variety of ways. Larger organizations may implement a dedicated SOC while smaller organizations may employ third-party organizations to provide such a capability.",
+          "id": "ir-4.14",
+          "title": "Security Operations Center"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "It is important for an organization to have a strategy in place for addressing incidents that have been brought to the attention of the general public, have cast the organization in a negative light, or have affected the organization’s constituents (e.g., partners, customers). Such publicity can be extremely harmful to the organization and affect its ability to carry out its mission and business functions. Taking proactive steps to repair the organization’s reputation is an essential aspect of reestablishing the trust and confidence of its constituents.",
+          "id": "ir-4.15",
+          "statement": [
+            {
+              "id": "ir-4.15_smt.a",
+              "prose": "Manage public relations associated with an incident; and"
+            },
+            {
+              "id": "ir-4.15_smt.b",
+              "prose": "Employ measures to repair the reputation of the organization."
+            }
+          ],
+          "title": "Public Relations and Reputation Repair"
+        }
+      ],
+      "family_id": "ir",
+      "guidance": "Organizations recognize that incident response capabilities are dependent on the capabilities of organizational systems and the mission and business processes being supported by those systems. Organizations consider incident response as part of the definition, design, and development of mission and business processes and systems. Incident-related information can be obtained from a variety of sources, including audit monitoring, physical access monitoring, and network monitoring; user or administrator reports; and reported supply chain events. An effective incident handling capability includes coordination among many organizational entities (e.g., mission or business owners, system owners, authorizing officials, human resources offices, physical security offices, personnel security offices, legal departments, risk executive [function], operations personnel, procurement offices). Suspected security incidents include the receipt of suspicious email communications that can contain malicious code. Suspected supply chain incidents include the insertion of counterfeit hardware or malicious code into organizational systems or system components. For federal agencies, an incident that involves personally identifiable information is considered a breach. A breach results in unauthorized disclosure, the loss of control, unauthorized acquisition, compromise, or a similar occurrence where a person other than an authorized user accesses or potentially accesses personally identifiable information or an authorized user accesses or potentially accesses such information for other than authorized purposes.",
+      "id": "ir-4",
+      "statement": [
+        {
+          "id": "ir-4_smt.a",
+          "prose": "Implement an incident handling capability for incidents that is consistent with the incident response plan and includes preparation, detection and analysis, containment, eradication, and recovery;"
+        },
+        {
+          "id": "ir-4_smt.b",
+          "prose": "Coordinate incident handling activities with contingency planning activities;"
+        },
+        {
+          "id": "ir-4_smt.c",
+          "prose": "Incorporate lessons learned from ongoing incident handling activities into incident response procedures, training, and testing, and implement the resulting changes accordingly; and"
+        },
+        {
+          "id": "ir-4_smt.d",
+          "prose": "Ensure the rigor, intensity, scope, and results of incident handling activities are comparable and predictable across the organization."
+        }
+      ],
+      "title": "Incident Handling"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ir",
+          "guidance": "Automated mechanisms for tracking incidents and collecting and analyzing incident information include Computer Incident Response Centers or other electronic databases of incidents and network monitoring devices.",
+          "id": "ir-5.1",
+          "parameters": [
+            {
+              "id": "ir-5.1_prm_1",
+              "label": "organization-defined automated mechanisms"
+            },
+            {
+              "id": "ir-05.01_odp.01",
+              "label": "automated mechanisms"
+            },
+            {
+              "id": "ir-05.01_odp.02",
+              "label": "automated mechanisms"
+            },
+            {
+              "id": "ir-05.01_odp.03",
+              "label": "automated mechanisms"
+            }
+          ],
+          "title": "Automated Tracking, Data Collection, and Analysis"
+        }
+      ],
+      "family_id": "ir",
+      "guidance": "Documenting incidents includes maintaining records about each incident, the status of the incident, and other pertinent information necessary for forensics as well as evaluating incident details, trends, and handling. Incident information can be obtained from a variety of sources, including network monitoring, incident reports, incident response teams, user complaints, supply chain partners, audit monitoring, physical access monitoring, and user and administrator reports. [IR-4](#ir-4) provides information on the types of incidents that are appropriate for monitoring.",
+      "id": "ir-5",
+      "title": "Incident Monitoring"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ir",
+          "guidance": "The recipients of incident reports are specified in [IR-6b](#ir-6_smt.b) . Automated reporting mechanisms include email, posting on websites (with automatic updates), and automated incident response tools and programs.",
+          "id": "ir-6.1",
+          "parameters": [
+            {
+              "id": "ir-06.01_odp",
+              "label": "automated mechanisms"
+            }
+          ],
+          "title": "Automated Reporting"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Reported incidents that uncover system vulnerabilities are analyzed by organizational personnel including system owners, mission and business owners, senior agency information security officers, senior agency officials for privacy, authorizing officials, and the risk executive (function). The analysis can serve to prioritize and initiate mitigation actions to address the discovered system vulnerability.",
+          "id": "ir-6.2",
+          "parameters": [
+            {
+              "id": "ir-06.02_odp",
+              "label": "personnel or roles"
+            }
+          ],
+          "title": "Vulnerabilities Related to Incidents"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Organizations involved in supply chain activities include product developers, system integrators, manufacturers, packagers, assemblers, distributors, vendors, and resellers. Entities that provide supply chain governance include the Federal Acquisition Security Council (FASC). Supply chain incidents include compromises or breaches that involve information technology products, system components, development processes or personnel, distribution processes, or warehousing facilities. Organizations determine the appropriate information to share and consider the value gained from informing external organizations about supply chain incidents, including the ability to improve processes or to identify the root cause of an incident.",
+          "id": "ir-6.3",
+          "title": "Supply Chain Coordination"
+        }
+      ],
+      "family_id": "ir",
+      "guidance": "The types of incidents reported, the content and timeliness of the reports, and the designated reporting authorities reflect applicable laws, executive orders, directives, regulations, policies, standards, and guidelines. Incident information can inform risk assessments, control effectiveness assessments, security requirements for acquisitions, and selection criteria for technology products.",
+      "id": "ir-6",
+      "parameters": [
+        {
+          "id": "ir-06_odp.01",
+          "label": "time period"
+        },
+        {
+          "id": "ir-06_odp.02",
+          "label": "authorities"
+        }
+      ],
+      "statement": [
+        {
+          "id": "ir-6_smt.a",
+          "prose": "Require personnel to report suspected incidents to the organizational incident response capability within [parameter: time period] ; and"
+        },
+        {
+          "id": "ir-6_smt.b",
+          "prose": "Report incident information to [parameter: authorities]."
+        }
+      ],
+      "title": "Incident Reporting"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ir",
+          "guidance": "Automated mechanisms can provide a push or pull capability for users to obtain incident response assistance. For example, individuals may have access to a website to query the assistance capability, or the assistance capability can proactively send incident response information to users (general distribution or targeted) as part of increasing understanding of current response capabilities and support.",
+          "id": "ir-7.1",
+          "parameters": [
+            {
+              "id": "ir-07.01_odp",
+              "label": "automated mechanisms"
+            }
+          ],
+          "title": "Automation Support for Availability of Information and Support"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "External providers of a system protection capability include the Computer Network Defense program within the U.S. Department of Defense. External providers help to protect, monitor, analyze, detect, and respond to unauthorized activity within organizational information systems and networks. It may be beneficial to have agreements in place with external providers to clarify the roles and responsibilities of each party before an incident occurs.",
+          "id": "ir-7.2",
+          "statement": [
+            {
+              "id": "ir-7.2_smt.a",
+              "prose": "Establish a direct, cooperative relationship between its incident response capability and external providers of system protection capability; and"
+            },
+            {
+              "id": "ir-7.2_smt.b",
+              "prose": "Identify organizational incident response team members to the external providers."
+            }
+          ],
+          "title": "Coordination with External Providers"
+        }
+      ],
+      "family_id": "ir",
+      "guidance": "Incident response support resources provided by organizations include help desks, assistance groups, automated ticketing systems to open and track incident response tickets, and access to forensics services or consumer redress services, when required.",
+      "id": "ir-7",
+      "title": "Incident Response Assistance"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ir",
+          "guidance": "Organizations may be required by law, regulation, or policy to follow specific procedures relating to breaches, including notice to individuals, affected organizations, and oversight bodies; standards of harm; and mitigation or other specific requirements.",
+          "id": "ir-8.1",
+          "statement": [
+            {
+              "id": "ir-8.1_smt.a",
+              "prose": "A process to determine if notice to individuals or other organizations, including oversight organizations, is needed;"
+            },
+            {
+              "id": "ir-8.1_smt.b",
+              "prose": "An assessment process to determine the extent of the harm, embarrassment, inconvenience, or unfairness to affected individuals and any mechanisms to mitigate such harms; and"
+            },
+            {
+              "id": "ir-8.1_smt.c",
+              "prose": "Identification of applicable privacy requirements."
+            }
+          ],
+          "title": "Breaches"
+        }
+      ],
+      "family_id": "ir",
+      "guidance": "It is important that organizations develop and implement a coordinated approach to incident response. Organizational mission and business functions determine the structure of incident response capabilities. As part of the incident response capabilities, organizations consider the coordination and sharing of information with external organizations, including external service providers and other organizations involved in the supply chain. For incidents involving personally identifiable information (i.e., breaches), include a process to determine whether notice to oversight organizations or affected individuals is appropriate and provide that notice accordingly.",
+      "id": "ir-8",
+      "parameters": [
+        {
+          "id": "ir-8_prm_5",
+          "label": "organization-defined incident response personnel (identified by name and/or by role) and organizational elements"
+        },
+        {
+          "id": "ir-08_odp.01",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ir-08_odp.02",
+          "label": "frequency"
+        },
+        {
+          "id": "ir-08_odp.03",
+          "label": "entities, personnel, or roles"
+        },
+        {
+          "id": "ir-08_odp.04",
+          "label": "incident response personnel"
+        },
+        {
+          "id": "ir-08_odp.05",
+          "label": "organizational elements"
+        },
+        {
+          "id": "ir-08_odp.06",
+          "label": "incident response personnel"
+        },
+        {
+          "id": "ir-08_odp.07",
+          "label": "organizational elements"
+        }
+      ],
+      "statement": [
+        {
+          "children": [
+            {
+              "id": "ir-8_smt.a.1",
+              "prose": "Provides the organization with a roadmap for implementing its incident response capability;"
+            },
+            {
+              "id": "ir-8_smt.a.2",
+              "prose": "Describes the structure and organization of the incident response capability;"
+            },
+            {
+              "id": "ir-8_smt.a.3",
+              "prose": "Provides a high-level approach for how the incident response capability fits into the overall organization;"
+            },
+            {
+              "id": "ir-8_smt.a.4",
+              "prose": "Meets the unique requirements of the organization, which relate to mission, size, structure, and functions;"
+            },
+            {
+              "id": "ir-8_smt.a.5",
+              "prose": "Defines reportable incidents;"
+            },
+            {
+              "id": "ir-8_smt.a.6",
+              "prose": "Provides metrics for measuring the incident response capability within the organization;"
+            },
+            {
+              "id": "ir-8_smt.a.7",
+              "prose": "Defines the resources and management support needed to effectively maintain and mature an incident response capability;"
+            },
+            {
+              "id": "ir-8_smt.a.8",
+              "prose": "Addresses the sharing of incident information;"
+            },
+            {
+              "id": "ir-8_smt.a.9",
+              "prose": "Is reviewed and approved by [parameter: personnel or roles] [parameter: frequency] ; and"
+            },
+            {
+              "id": "ir-8_smt.a.10",
+              "prose": "Explicitly designates responsibility for incident response to [parameter: entities, personnel, or roles]."
+            }
+          ],
+          "id": "ir-8_smt.a",
+          "prose": "Develop an incident response plan that:"
+        },
+        {
+          "id": "ir-8_smt.b",
+          "prose": "Distribute copies of the incident response plan to [parameter: incident response personnel];"
+        },
+        {
+          "id": "ir-8_smt.c",
+          "prose": "Update the incident response plan to address system and organizational changes or problems encountered during plan implementation, execution, or testing;"
+        },
+        {
+          "id": "ir-8_smt.d",
+          "prose": "Communicate incident response plan changes to [parameter: organization-defined incident response personnel (identified by name and/or by role) and organizational elements] ; and"
+        },
+        {
+          "id": "ir-8_smt.e",
+          "prose": "Protect the incident response plan from unauthorized disclosure and modification."
+        }
+      ],
+      "title": "Incident Response Plan"
+    },
+    {
+      "enhancements": [
+        {
+          "family_id": "ir",
+          "id": "ir-9.1",
+          "title": "Responsible Personnel"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Organizations establish requirements for responding to information spillage incidents in incident response plans. Incident response training on a regular basis helps to ensure that organizational personnel understand their individual responsibilities and what specific actions to take when spillage incidents occur.",
+          "id": "ir-9.2",
+          "parameters": [
+            {
+              "id": "ir-09.02_odp",
+              "label": "frequency"
+            }
+          ],
+          "title": "Training"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Corrective actions for systems contaminated due to information spillages may be time-consuming. Personnel may not have access to the contaminated systems while corrective actions are being taken, which may potentially affect their ability to conduct organizational business.",
+          "id": "ir-9.3",
+          "parameters": [
+            {
+              "id": "ir-09.03_odp",
+              "label": "procedures"
+            }
+          ],
+          "title": "Post-spill Operations"
+        },
+        {
+          "family_id": "ir",
+          "guidance": "Controls include ensuring that personnel who are exposed to spilled information are made aware of the laws, executive orders, directives, regulations, policies, standards, and guidelines regarding the information and the restrictions imposed based on exposure to such information.",
+          "id": "ir-9.4",
+          "parameters": [
+            {
+              "id": "ir-09.04_odp",
+              "label": "controls"
+            }
+          ],
+          "title": "Exposure to Unauthorized Personnel"
+        }
+      ],
+      "family_id": "ir",
+      "guidance": "Information spillage refers to instances where information is placed on systems that are not authorized to process such information. Information spills occur when information that is thought to be a certain classification or impact level is transmitted to a system and subsequently is determined to be of a higher classification or impact level. At that point, corrective action is required. The nature of the response is based on the classification or impact level of the spilled information, the security capabilities of the system, the specific nature of the contaminated storage media, and the access authorizations of individuals with authorized access to the contaminated system. The methods used to communicate information about the spill after the fact do not involve methods directly associated with the actual spill to minimize the risk of further spreading the contamination before such contamination is isolated and eradicated.",
+      "id": "ir-9",
+      "parameters": [
+        {
+          "id": "ir-09_odp.01",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ir-09_odp.02",
+          "label": "personnel or roles"
+        },
+        {
+          "id": "ir-09_odp.03",
+          "label": "actions"
+        }
+      ],
+      "statement": [
+        {
+          "id": "ir-9_smt.a",
+          "prose": "Assigning [parameter: personnel or roles] with responsibility for responding to information spills;"
+        },
+        {
+          "id": "ir-9_smt.b",
+          "prose": "Identifying the specific information involved in the system contamination;"
+        },
+        {
+          "id": "ir-9_smt.c",
+          "prose": "Alerting [parameter: personnel or roles] of the information spill using a method of communication not associated with the spill;"
+        },
+        {
+          "id": "ir-9_smt.d",
+          "prose": "Isolating the contaminated system or system component;"
+        },
+        {
+          "id": "ir-9_smt.e",
+          "prose": "Eradicating the information from the contaminated system or component;"
+        },
+        {
+          "id": "ir-9_smt.f",
+          "prose": "Identifying other systems or system components that may have been subsequently contaminated; and"
+        },
+        {
+          "id": "ir-9_smt.g",
+          "prose": "Performing the following additional actions: [parameter: actions]."
+        }
+      ],
+      "title": "Information Spillage Response"
+    },
+    {
+      "family_id": "ir",
+      "id": "ir-10",
+      "title": "Integrated Information Security Analysis Team"
+    }
+  ],
+  "family_id": "ir",
+  "family_title": "Incident Response"
+}

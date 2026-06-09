@@ -10,7 +10,7 @@ schema_version: 1
 frameworks:
   - id: nist-sp-800-53
     name: "NIST SP 800-53"
-    version: "5.1.0"
+    version: "5.2.0"
     skill_dir: skills/nist-sp-800-53
     profile: skills/nist-sp-800-53/framework_profile.yaml
     sources: skills/nist-sp-800-53/sources.yaml
