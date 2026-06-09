@@ -85,10 +85,25 @@ jobs:
           git add -A
           git commit -m "Bump ${FW} version ${OLD} -> ${NEW} (detected on canonical source)"
           git push --force-with-lease origin "$BRANCH"
+
+          # Ensure the label exists (idempotent); gh validates labels before
+          # creating the PR, so a missing label would abort PR creation.
+          gh label create "automated-update" \
+            --color "1d76db" \
+            --description "Automated version bump proposed by propose-update.yml" \
+            2>/dev/null || true
+
+          # Idempotent: skip if a PR already targets this branch.
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            echo "A PR already exists for $BRANCH; nothing to do."
+            exit 0
+          fi
+
           gh pr create \
             --base main \
             --head "$BRANCH" \
             --title "Update ${FW}: version ${OLD} -> ${NEW}" \
+            --label "automated-update" \
             --body "$(cat <<EOF
           Automated, **deterministic** version bump prepared by \`propose-update.yml\`.
 
@@ -109,5 +124,4 @@ jobs:
 
           _Validation (\`validate_skills.py\`) passed in CI before this PR was opened._
           EOF
-          )" \
-            --label "automated-update" || echo "PR may already exist for $BRANCH"
+          )"

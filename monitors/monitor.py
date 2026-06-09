@@ -17,7 +17,9 @@ Change classification (exactly these eight classes):
     related_resource_change, errata_or_patch, new_framework_version,
     ambiguous_requires_review
 
-Only review-worthy classes create issues (see REVIEW_WORTHY).
+Only review-worthy classes create issues (see REVIEW_WORTHY). Version drift is
+detected and logged here but handed to propose-update.yml, which opens a pull
+request rather than an issue — so it is deliberately excluded from REVIEW_WORTHY.
 """
 
 from __future__ import annotations
@@ -60,12 +62,15 @@ NEW_FRAMEWORK_VERSION = "new_framework_version"
 AMBIGUOUS_REQUIRES_REVIEW = "ambiguous_requires_review"
 
 # Classes that warrant a GitHub issue.
+#
+# Version-drift classes (NEW_FRAMEWORK_VERSION, ERRATA_OR_PATCH) are intentionally
+# NOT here: those are handled by propose-update.yml, which opens a deterministic
+# pull request instead of an issue. The monitor only raises issues for changes
+# that have no automated fix and need a human to triage.
 REVIEW_WORTHY = {
     SOURCE_UNREACHABLE,
     METADATA_CHANGE,
     RELATED_RESOURCE_CHANGE,
-    ERRATA_OR_PATCH,
-    NEW_FRAMEWORK_VERSION,
     AMBIGUOUS_REQUIRES_REVIEW,
 }
 
@@ -308,36 +313,6 @@ def check_version_pin(
     }
 
 
-def build_pin_mismatch_issue(framework: dict, mismatch: dict) -> tuple[str, str]:
-    title = (
-        f"[{framework['id']}] version_pin_mismatch: "
-        f"pinned {mismatch['pinned']} but source detected {mismatch['detected']}"
-    )
-    lines = [
-        "The monitor detected that the **pinned version in this repository differs "
-        "from the version detected on the live official source**.",
-        "",
-        f"- **Framework:** {framework['name']} (`{framework['id']}`)",
-        f"- **Pinned version** (`frameworks.yaml` + `framework_profile.yaml`): "
-        f"`{mismatch['pinned']}`",
-        f"- **Detected version** (live source): `{mismatch['detected']}`",
-        f"- **Change classification:** `{mismatch['classification']}`",
-        f"- **Source(s) where detected:** {', '.join(f'`{s}`' for s in mismatch['source_ids'])}",
-        "",
-        "## Next steps",
-        "1. Visit the canonical source URL(s) above and confirm the detected version.",
-        "2. Review what changed between the pinned and detected versions.",
-        "3. Open a **pull request** that:",
-        "   - Updates `version` in `frameworks.yaml` and `framework_profile.yaml`.",
-        "   - Updates `SKILL.md` and `changelog.md` to reflect any content changes.",
-        "   - Updates `source_state.json` with the new baseline.",
-        "",
-        "_Do not update the pinned version without verifying the change against the "
-        "official source. Distinguish official framework text from interpretation._",
-    ]
-    return title, "\n".join(lines)
-
-
 def build_issue(framework: dict, obs: Observation, classification: str) -> tuple[str, str]:
     title = f"[{framework['id']}] {classification}: {obs.source_id}"
     lines = [
@@ -463,30 +438,22 @@ def monitor_framework(
     # Version pin check — runs every time regardless of hash changes.
     # ------------------------------------------------------------------ #
     observations = all_observations
+    # Version drift is reported for visibility but does NOT open an issue —
+    # propose-update.yml opens a deterministic pull request for it instead.
     mismatch = check_version_pin(framework, observations)
-    pin_issue_created = False
     if mismatch:
-        label = (
+        print(
             f"  ! version_pin_mismatch  pinned={mismatch['pinned']}  "
             f"detected={mismatch['detected']}  ({mismatch['classification']})"
+            "  -> handled by propose-update.yml (PR)"
         )
-        print(label)
-        if repo and token:
-            pin_title, pin_body = build_pin_mismatch_issue(framework, mismatch)
-            if pin_title in existing_titles:
-                print(f"      (issue already open: {pin_title!r})")
-            else:
-                pin_issue_created = create_github_issue(repo, token, pin_title, pin_body)
-                if pin_issue_created:
-                    existing_titles.add(pin_title)
-                    print(f"      + opened issue: {pin_title!r}")
         results.append(
             {
                 "framework_id": framework["id"],
                 "source_id": "version_pin_check",
                 "classification": f"version_pin_mismatch:{mismatch['classification']}",
-                "review_worthy": True,
-                "issue_created": pin_issue_created,
+                "review_worthy": False,  # no issue; a PR is proposed separately
+                "issue_created": False,
             }
         )
     else:

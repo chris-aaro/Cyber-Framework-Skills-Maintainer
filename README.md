@@ -104,28 +104,48 @@ version / publication date (via `expected_metadata` regex hints). It compares
 the new observation to `source_state.json` and classifies the change as exactly
 one of:
 
-| Classification | Opens issue? | Meaning |
+| Classification | Action | Meaning |
 |---|:--:|---|
-| `no_change` | no | All tracked signals identical (or first-run baseline). |
-| `cosmetic_page_change` | no | Body hash changed but title/version/date stable. |
-| `source_unreachable` | yes | Fetch failed or non-2xx response. |
-| `metadata_change` | yes | Title/date changed, version unchanged. |
-| `related_resource_change` | yes | Change on a `related` (non-canonical) source. |
-| `errata_or_patch` | yes | Patch-level version bump or "errata" detected. |
-| `new_framework_version` | yes | Major/minor version increase. |
-| `ambiguous_requires_review` | yes | Change detected but not confidently classified. |
+| `no_change` | none | All tracked signals identical (or first-run baseline). |
+| `cosmetic_page_change` | none | Body hash changed but title/version/date stable. |
+| `source_unreachable` | **issue** | Fetch failed or non-2xx response. |
+| `metadata_change` | **issue** | Title/date changed, version unchanged. |
+| `related_resource_change` | **issue** | Change on a `related` (non-canonical) source. |
+| `ambiguous_requires_review` | **issue** | Change detected but not confidently classified. |
+| `errata_or_patch` | **PR** | Patch-level version bump or "errata" detected. |
+| `new_framework_version` | **PR** | Major/minor version increase. |
 
-## Maintenance flow (issue first, PR for changes)
+**Division of labor:** version drift (the bottom two rows) has a deterministic
+fix, so it is handled by `propose-update.yml`, which opens a **pull request** —
+not an issue. Everything else has no automated fix, so the monitor opens an
+**issue** for a human to triage. The monitor still logs version drift for
+visibility but does not duplicate it as an issue.
 
-1. The scheduled monitor detects a review-worthy change and **opens a GitHub
-   issue** (deduplicated by title).
-2. A maintainer (optionally with Claude) verifies the change against the
-   official source.
-3. Claude-authored updates are proposed via a **pull request** that edits the
-   relevant `SKILL.md` / `framework_profile.yaml` / `changelog.md`, bumps
-   `version` in `frameworks.yaml` if applicable, and updates
+## Maintenance flows
+
+Two complementary flows, split by whether the change has a deterministic fix.
+
+### A. Version drift → automated pull request (`propose-update.yml`)
+
+1. The proposer detects that a framework's pinned version differs from the
+   version on its live canonical source.
+2. It deterministically bumps `version` in `frameworks.yaml` and
+   `framework_profile.yaml`, adds a `changelog.md` entry, and refreshes
    `source_state.json`.
-4. `validate.yml` must pass before merge. **Nothing is auto-pushed to `main`.**
+3. It runs `validate_skills.py`, then opens a **pull request**.
+4. You review the diff, confirm against the official source, and approve. If the
+   *substantive* content changed, you update `SKILL.md` in the same PR — the
+   automation only bumps the version number, it does not rewrite framework text.
+
+### B. Everything else → GitHub issue (`monitor.yml`)
+
+1. The monitor detects a non-version change with no automated fix
+   (`source_unreachable`, `metadata_change`, `related_resource_change`,
+   `ambiguous_requires_review`) and **opens an issue** (deduplicated by title).
+2. A maintainer (optionally with Claude) verifies it against the official source
+   and, if warranted, opens a **pull request** with the change.
+
+In both cases `validation` must pass and **nothing is auto-pushed to `main`.**
 
 ## Adding a new framework
 
