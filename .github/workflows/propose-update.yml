@@ -1,0 +1,113 @@
+name: Propose framework update
+
+# When a framework's pinned version differs from the version detected on its
+# live canonical source, this workflow prepares a deterministic version-bump and
+# opens a pull request for review. It never edits `main` directly — you approve
+# the PR.
+#
+# Scope: version bumps only. It does NOT rewrite SKILL.md control language; the
+# PR asks the reviewer to confirm substantive changes against the official source.
+
+on:
+  workflow_dispatch:
+    inputs:
+      framework:
+        description: "Framework id to check (e.g. nist-sp-800-53)"
+        required: true
+  schedule:
+    # Weekly, Mondays 07:00 UTC (one hour after the monitor's issue sweep).
+    - cron: "0 7 * * 1"
+
+permissions:
+  contents: write        # create a branch + commit
+  pull-requests: write   # open the PR
+
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    strategy:
+      # On the weekly schedule, check every framework. On manual dispatch the
+      # input narrows it (the script ignores non-matching ids).
+      matrix:
+        framework:
+          - nist-sp-800-53
+          - nist-csf-2.0
+          - nist-ai-rmf-1.0
+      fail-fast: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Skip non-selected frameworks on manual dispatch
+        id: gate
+        run: |
+          SEL="${{ github.event.inputs.framework }}"
+          if [ -n "$SEL" ] && [ "$SEL" != "${{ matrix.framework }}" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Python
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        if: steps.gate.outputs.run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Propose deterministic update
+        if: steps.gate.outputs.run == 'true'
+        id: propose
+        run: |
+          python monitors/propose_update.py \
+            --framework "${{ matrix.framework }}" --apply --timeout 20
+
+      - name: Validate edited skill
+        if: steps.gate.outputs.run == 'true' && steps.propose.outputs.has_changes == 'true'
+        run: python validation/validate_skills.py --framework "${{ matrix.framework }}"
+
+      - name: Open pull request
+        if: steps.gate.outputs.run == 'true' && steps.propose.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FW: ${{ matrix.framework }}
+          OLD: ${{ steps.propose.outputs.old_version }}
+          NEW: ${{ steps.propose.outputs.new_version }}
+        run: |
+          set -euo pipefail
+          BRANCH="auto/update-${FW}-${NEW}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "Bump ${FW} version ${OLD} -> ${NEW} (detected on canonical source)"
+          git push --force-with-lease origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Update ${FW}: version ${OLD} -> ${NEW}" \
+            --body "$(cat <<EOF
+          Automated, **deterministic** version bump prepared by \`propose-update.yml\`.
+
+          - **Framework:** \`${FW}\`
+          - **Pinned version:** \`${OLD}\` -> **\`${NEW}\`** (detected on the live canonical source)
+
+          ### What this PR changes
+          - \`frameworks.yaml\` and \`framework_profile.yaml\`: version bumped.
+          - \`changelog.md\`: dated entry added under [Unreleased].
+          - \`source_state.json\`: baseline refreshed from the live observation.
+
+          ### Reviewer checklist (before approving)
+          - [ ] Confirm the new version on the official source.
+          - [ ] Review the changelog entry.
+          - [ ] If the **substantive** framework content changed (controls, outcomes,
+                language), update \`SKILL.md\` in this PR — this automation only bumps
+                the version number, it does not rewrite framework content.
+
+          _Validation (\`validate_skills.py\`) passed in CI before this PR was opened._
+          EOF
+          )" \
+            --label "automated-update" || echo "PR may already exist for $BRANCH"
