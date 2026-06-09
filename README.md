@@ -1,10 +1,12 @@
-# NIST Framework Claude Skills Maintainer
+# Cyber Framework Claude Skills Maintainer
 
 A **local-first, GitHub-based** system for maintaining framework-specific
-[Claude Skills](https://docs.claude.com/) for three NIST frameworks, and for
-**monitoring the official NIST sources** so those skills stay accurate over time.
+[Claude Skills](https://docs.claude.com/) for cybersecurity and AI risk
+frameworks, and for **monitoring the official sources** of those frameworks so
+skills stay accurate over time.
 
-Frameworks covered:
+Frameworks are registered in [`frameworks.yaml`](frameworks.yaml). The three
+initial frameworks are:
 
 | Framework | Skill | Version (pinned) |
 |---|---|---|
@@ -12,11 +14,14 @@ Frameworks covered:
 | NIST Cybersecurity Framework 2.0 | [`skills/nist-csf-2.0`](skills/nist-csf-2.0) | 2.0 |
 | NIST AI Risk Management Framework 1.0 | [`skills/nist-ai-rmf-1.0`](skills/nist-ai-rmf-1.0) | 1.0 |
 
+New frameworks can be added at any time by following the steps in
+[Adding a new framework](#adding-a-new-framework).
+
 ## Design philosophy: source fidelity
 
 These skills are deliberately **thin on framework content**. They contain how
-Claude should *reason* about each framework — not copies of the official control
-catalog, CSF Core, or AI RMF text. Every skill enforces two rules:
+Claude should *reason* about each framework — not copies of official control
+catalogs, cores, or normative text. Every skill enforces two rules:
 
 1. **Never invent** framework requirements, control/subcategory IDs, mappings, or
    official language. Official text is *referenced* via each skill's
@@ -24,13 +29,13 @@ catalog, CSF Core, or AI RMF text. Every skill enforces two rules:
 2. **Always distinguish** official framework text (`[OFFICIAL]`) from
    `[INTERPRETATION]`, `[IMPLEMENTATION]` advice, and `[MAPPING RATIONALE]`.
 
-The validator (below) enforces structure and flags over-claiming language such as
+The validator enforces structure and flags over-claiming language such as
 "NIST mandates" or "guarantees compliance".
 
 ## Repository layout
 
 ```
-frameworks.yaml              # registry of the three frameworks (single source of truth)
+frameworks.yaml              # registry of all frameworks (single source of truth)
 requirements.txt             # PyYAML + pytest (everything else is stdlib)
 pytest.ini
 common/utils.py              # shared helpers: YAML/JSON IO, http_get, hashing
@@ -69,12 +74,12 @@ python validation/validate_skills.py --framework nist-csf-2.0
 python -m pytest skills -q                        # per-skill tests
 ```
 
-The validator checks that each skill has all required files, that `SKILL.md` has
-all required sections, that `framework_profile.yaml` matches the registry id and
-version, that `changelog.md` is non-empty, that `sources.yaml` has at least one
-canonical source, and that no risky/over-claiming language appears in `SKILL.md`
-unless tagged `[JUSTIFIED: ...]` or shown inside a ```risky-language-reference```
-example block.
+The validator checks that each skill has all required files, that `SKILL.md`
+has all required sections, that `framework_profile.yaml` matches the registry
+id and version, that `changelog.md` is non-empty, that `sources.yaml` has at
+least one canonical source, and that no risky/over-claiming language appears in
+`SKILL.md` unless tagged `[JUSTIFIED: ...]` or shown inside a
+`risky-language-reference` example block.
 
 ### Monitor sources
 
@@ -87,15 +92,17 @@ python monitors/monitor.py --write --framework nist-ai-rmf-1.0
 ```
 
 In GitHub Actions the monitor runs on a weekly schedule with `GITHUB_TOKEN` and
-`GITHUB_REPOSITORY` set, and opens issues for review-worthy changes. It runs
-**read-only against the repo** — it does not commit state to `main`.
+`GITHUB_REPOSITORY` set automatically, and opens issues for review-worthy
+changes. It runs **read-only against the repo** — it never commits state to
+`main`.
 
 ## How change monitoring works
 
 For each source in a skill's `sources.yaml`, the monitor records reachability,
-HTTP status, a SHA-256 of the page/file, the page title, and any detected version
-/ publication date (via the `expected_metadata` regex hints). It compares the new
-observation to `source_state.json` and classifies the change as exactly one of:
+HTTP status, a SHA-256 of the page/file, the page title, and any detected
+version / publication date (via `expected_metadata` regex hints). It compares
+the new observation to `source_state.json` and classifies the change as exactly
+one of:
 
 | Classification | Opens issue? | Meaning |
 |---|:--:|---|
@@ -112,25 +119,44 @@ observation to `source_state.json` and classifies the change as exactly one of:
 
 1. The scheduled monitor detects a review-worthy change and **opens a GitHub
    issue** (deduplicated by title).
-2. A maintainer (optionally with Claude) verifies the change against the official
-   source.
+2. A maintainer (optionally with Claude) verifies the change against the
+   official source.
 3. Claude-authored updates are proposed via a **pull request** that edits the
    relevant `SKILL.md` / `framework_profile.yaml` / `changelog.md`, bumps
-   `version` in `frameworks.yaml` if applicable, and updates `source_state.json`.
+   `version` in `frameworks.yaml` if applicable, and updates
+   `source_state.json`.
 4. `validate.yml` must pass before merge. **Nothing is auto-pushed to `main`.**
 
 ## Adding a new framework
 
-1. Add an entry to `frameworks.yaml` (`id`, `name`, `version`, paths).
-2. Create `skills/<id>/` with the six required members (copy an existing skill as
-   a template): `SKILL.md`, `framework_profile.yaml`, `sources.yaml`,
-   `source_state.json`, `changelog.md`, `tests/test_skill.py`.
-3. Run `python validation/validate_skills.py` and `python -m pytest skills -q`.
+1. Add an entry to [`frameworks.yaml`](frameworks.yaml) with: `id`, `name`,
+   `version`, `skill_dir`, `profile`, `sources`, and `state` paths.
+2. Create `skills/<id>/` with the six required members. Copy an existing skill
+   folder as a starting point:
+   ```bash
+   cp -r skills/nist-csf-2.0 skills/<new-framework-id>
+   ```
+3. Edit all six files for the new framework:
+   - `SKILL.md` — update Purpose, Scope, and Framework-Specific Workflows.
+   - `framework_profile.yaml` — set `framework_id`, `version`, `publisher`,
+     `official_structure`.
+   - `sources.yaml` — add at least one canonical source with `expected_metadata`
+     hints.
+   - `source_state.json` — seed all source entries with `null` values.
+   - `changelog.md` — add an initial entry.
+   - `tests/test_skill.py` — update the `FRAMEWORK_ID` constant and any
+     framework-specific assertions.
+4. Run the full validation suite:
+   ```bash
+   python validation/validate_skills.py
+   python -m pytest skills -q
+   ```
 
 ## Notes & limitations
 
 - Version/date detection uses conservative regex heuristics; when uncertain the
   monitor prefers `ambiguous_requires_review` over guessing.
-- Source URLs in `sources.yaml` are public official NIST pages; confirm the
-  pinned `version` / `publication_date` against them before relying on them.
-- The skills intentionally embed no official framework text.
+- Skills embed no official framework text — content accuracy depends on
+  consulting the official sources referenced in `sources.yaml`.
+- The pinned `version` / `publication_date` in each `framework_profile.yaml`
+  should be verified against the canonical source before being relied upon.

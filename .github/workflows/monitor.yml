@@ -1,6 +1,6 @@
 name: Monitor NIST sources
 
-# Scheduled monitoring of official NIST framework sources.
+# Scheduled monitoring of official cyber framework sources.
 # On detecting a review-worthy change, the monitor opens a GitHub issue.
 # It NEVER pushes changes to the repository; skill edits flow through PRs.
 

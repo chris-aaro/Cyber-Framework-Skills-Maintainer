@@ -1,1 +1,1 @@
-"""Shared helpers for the NIST framework skills maintainer."""
+"""Shared helpers for the Cyber Framework Claude Skills Maintainer."""

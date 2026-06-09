@@ -27,8 +27,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 FRAMEWORKS_FILE = REPO_ROOT / "frameworks.yaml"
 
 USER_AGENT = (
-    "nist-skills-maintainer/0.1 (+https://github.com/) "
-    "monitoring official NIST framework sources"
+    "cyber-framework-skills-maintainer/0.1 (+https://github.com/) "
+    "monitoring official cyber framework sources"
 )
 
 

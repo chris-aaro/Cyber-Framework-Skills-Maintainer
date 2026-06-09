@@ -2,7 +2,7 @@
 """
 monitors/monitor.py
 
-Monitor official NIST framework sources for changes and (in CI) open a GitHub
+Monitor official cyber framework sources for changes and (in CI) open a GitHub
 issue when a change may require human + Claude review.
 
 Design constraints honored here:
@@ -388,7 +388,7 @@ def monitor_framework(
 
 
 def main(argv: Optional[list[str]] = None) -> int:
-    parser = argparse.ArgumentParser(description="Monitor NIST framework sources.")
+    parser = argparse.ArgumentParser(description="Monitor cyber framework sources.")
     parser.add_argument("--framework", help="Monitor only this framework id.")
     parser.add_argument(
         "--write",
