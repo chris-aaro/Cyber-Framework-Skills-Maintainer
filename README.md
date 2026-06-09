@@ -1,9 +1,13 @@
 # Cyber Framework Claude Skills Maintainer
 
-A **local-first, GitHub-based** system for maintaining framework-specific
-[Claude Skills](https://docs.claude.com/) for cybersecurity and AI risk
-frameworks, and for **monitoring the official sources** of those frameworks so
-skills stay accurate over time.
+A system for keeping [Claude Skills](https://docs.claude.com/) accurate and current for
+cybersecurity and AI risk frameworks. Each skill turns Claude into a reliable expert on
+a specific framework — grounded in the framework's official content, never guessing.
+
+A **weekly Claude Code routine** does the intelligent maintenance work: it detects when
+a framework's official source has changed, updates the bundled reference content, authors
+the changelog, and opens a pull request for human review. GitHub hosts the repo and runs
+a CI validation gate; it never touches the skill content itself.
 
 Frameworks are registered in [`frameworks.yaml`](frameworks.yaml). The three
 initial frameworks are:
@@ -37,23 +41,25 @@ Every skill enforces two rules:
 The validator enforces structure and flags over-claiming language such as
 "NIST mandates" or "guarantees compliance".
 
-## Two halves: detection (GitHub) + authoring (Claude routine)
+## How it works
 
-Keeping a skill current has a cheap, deterministic half and an intelligent half.
-They live in different places on purpose:
+Keeping a skill current requires two kinds of work: cheap, deterministic checking and
+intelligent authoring. They live in different places on purpose.
 
-- **GitHub Actions (deterministic, free):** monitor sources, detect drift, run the
-  `validate` CI gate, host PR review. No Claude.
-- **A weekly Claude Code routine (intelligent):** when a new version ships, fetch
-  the new content, update the bundled references, draft the changelog/structure
-  changes, validate, and open a PR. See
-  [`routines/weekly-maintenance.md`](routines/weekly-maintenance.md).
+**The weekly Claude Code routine** is the primary maintenance path. It runs
+[`routines/weekly-maintenance.md`](routines/weekly-maintenance.md) on a schedule:
 
-> **Why a routine and not the Claude Code GitHub Action?** From **2026-06-15**,
-> Anthropic's plan no longer covers the Claude Code GitHub Actions integration —
-> in-Actions Claude becomes metered per-use SDK cost. A scheduled **routine** runs
-> on your existing Claude Code plan, so the authoring half stays cost-effective
-> while GitHub keeps doing the cheap deterministic work.
+1. Runs the monitor to detect version drift against live official sources.
+2. Regenerates the bundled reference content from the official machine-readable artifact.
+3. Reviews what changed, authors the changelog summary, and updates `SKILL.md` structure if needed.
+4. Validates everything and opens a pull request per framework for human review.
+
+**GitHub** provides the hosting and review infrastructure:
+
+- `validate.yml` — CI gate that runs on every push/PR; blocks merges if validation fails.
+- `monitor.yml` — weekly check for non-version changes (unreachable sources, metadata shifts); opens issues for human triage.
+- `propose-update.yml` — manual-only fallback that bumps a version number if the routine is unavailable.
+- Branch protection ensures nothing reaches `main` without a passing CI check and human approval.
 
 ## Repository layout
 
@@ -84,7 +90,7 @@ skills/<framework>/
   propose-update.yml         # manual deterministic version-bump fallback
 ```
 
-No database and no cloud infrastructure beyond GitHub Actions are required.
+No database is required. The only dependency beyond Python stdlib is PyYAML.
 
 ## Bundled reference content
 
@@ -118,6 +124,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### Setting up the weekly routine
+
+Create a scheduled Claude Code routine pointing at
+[`routines/weekly-maintenance.md`](routines/weekly-maintenance.md). The routine's
+environment needs `git` and `gh` authenticated with permission to push branches and
+open PRs on this repo (not `main` write).
+
 ## Usage
 
 ### Validate skills
@@ -126,7 +139,7 @@ pip install -r requirements.txt
 python validation/validate_skills.py            # human-readable, exits non-zero on failure
 python validation/validate_skills.py --json      # machine-readable
 python validation/validate_skills.py --framework nist-csf-2.0
-python -m pytest skills -q                        # per-skill tests
+python -m pytest -q                              # per-skill + transform tests
 ```
 
 The validator checks that each skill has all required files, that `SKILL.md`
@@ -148,11 +161,6 @@ python monitors/monitor.py --dry-run
 python monitors/monitor.py --write --framework nist-ai-rmf-1.0
 ```
 
-In GitHub Actions the monitor runs on a weekly schedule with `GITHUB_TOKEN` and
-`GITHUB_REPOSITORY` set automatically, and opens issues for review-worthy
-changes. It runs **read-only against the repo** — it never commits state to
-`main`.
-
 ## How change monitoring works
 
 For each source in a skill's `sources.yaml`, the monitor records reachability,
@@ -169,18 +177,15 @@ one of:
 | `metadata_change` | **issue** | Title/date changed, version unchanged. |
 | `related_resource_change` | **issue** | Change on a `related` (non-canonical) source. |
 | `ambiguous_requires_review` | **issue** | Change detected but not confidently classified. |
-| `errata_or_patch` | **PR** | Patch-level version bump or "errata" detected. |
-| `new_framework_version` | **PR** | Major/minor version increase. |
+| `errata_or_patch` | **routine** | Patch-level version bump or "errata" detected. |
+| `new_framework_version` | **routine** | Major/minor version increase. |
 
-**Division of labor:** version drift (the bottom two rows) has a deterministic
-fix, so it is handled by `propose-update.yml`, which opens a **pull request** —
-not an issue. Everything else has no automated fix, so the monitor opens an
-**issue** for a human to triage. The monitor still logs version drift for
-visibility but does not duplicate it as an issue.
+Version drift (the bottom two rows) is detected by the monitor but handled by the
+weekly routine, which fetches the new content, updates the bundled references, and
+opens a full content PR. Everything else has no automated fix, so the monitor opens
+a GitHub **issue** for a human to triage.
 
 ## Maintenance flows
-
-Three channels, split by who can act on the change.
 
 ### A. Version drift → Claude Code routine opens a content PR (primary)
 
@@ -192,9 +197,7 @@ detects that a framework's pinned version is behind its live source, then:
    grounded in the official change list and the reference diff;
 4. runs validation, opens **one PR per framework**.
 
-You review and approve. Setup: create the routine with the `/schedule` skill,
-pointing it at the playbook; its environment needs `git` + `gh` able to push
-branches and open PRs (not `main` write).
+You review and approve.
 
 ### B. Non-version changes → GitHub issue (`monitor.yml`)
 
@@ -245,7 +248,5 @@ In all cases `validation` must pass and **nothing is auto-pushed to `main`.**
 
 - Version/date detection uses conservative regex heuristics; when uncertain the
   monitor prefers `ambiguous_requires_review` over guessing.
-- Skills embed no official framework text — content accuracy depends on
-  consulting the official sources referenced in `sources.yaml`.
 - The pinned `version` / `publication_date` in each `framework_profile.yaml`
   should be verified against the canonical source before being relied upon.
