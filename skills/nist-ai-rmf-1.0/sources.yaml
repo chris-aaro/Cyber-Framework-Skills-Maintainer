@@ -1,0 +1,47 @@
+# sources.yaml — NIST AI Risk Management Framework 1.0
+# canonical_sources: authoritative artifacts. related_sources: supporting resources.
+# expected_metadata patterns are conservative Python regex (case-insensitive).
+
+canonical_sources:
+  - id: ai-rmf-program-home
+    url: "https://www.nist.gov/itl/ai-risk-management-framework"
+    type: canonical
+    format: html
+    description: "NIST AI RMF program home page."
+    expected_metadata:
+      title_contains: "AI Risk Management Framework"
+      version_pattern: "AI RMF\\s*([0-9]+\\.[0-9]+)"
+      date_pattern: "([A-Z][a-z]+ [0-9]{1,2}, [0-9]{4})"
+
+  - id: ai-rmf-100-1-pdf
+    url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf"
+    type: canonical
+    format: pdf
+    description: "AI RMF 1.0 authoritative PDF (NIST AI 100-1)."
+    expected_metadata:
+      version_pattern: "100-1"
+
+related_sources:
+  - id: ai-rmf-playbook
+    url: "https://airc.nist.gov/airmf-resources/playbook/"
+    type: related
+    format: html
+    description: "AI RMF Playbook (suggested actions) on the AIRC."
+    expected_metadata:
+      title_contains: "Playbook"
+
+  - id: ai-rmf-airc-home
+    url: "https://airc.nist.gov/"
+    type: related
+    format: html
+    description: "NIST Trustworthy & Responsible AI Resource Center (AIRC)."
+    expected_metadata:
+      title_contains: "AI"
+
+  - id: ai-rmf-genai-profile
+    url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+    type: related
+    format: pdf
+    description: "Generative AI Profile (NIST AI 600-1) — companion profile."
+    expected_metadata:
+      version_pattern: "600-1"

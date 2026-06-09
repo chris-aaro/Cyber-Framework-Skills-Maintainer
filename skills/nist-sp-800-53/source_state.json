@@ -1,0 +1,65 @@
+{
+  "last_run": null,
+  "sources": {
+    "sp800-53r5-csrc": {
+      "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+      "type": "canonical",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    },
+    "sp800-53a-r5-csrc": {
+      "url": "https://csrc.nist.gov/pubs/sp/800/53/a/r5/final",
+      "type": "canonical",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    },
+    "sp800-53b-csrc": {
+      "url": "https://csrc.nist.gov/pubs/sp/800/53/b/upd1/final",
+      "type": "canonical",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    },
+    "sp800-53-controls-project": {
+      "url": "https://csrc.nist.gov/projects/risk-management/sp800-53-controls",
+      "type": "related",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    },
+    "sp800-53-oscal": {
+      "url": "https://github.com/usnistgov/oscal-content",
+      "type": "related",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    }
+  }
+}

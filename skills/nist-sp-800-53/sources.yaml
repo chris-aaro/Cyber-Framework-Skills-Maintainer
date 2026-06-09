@@ -1,0 +1,56 @@
+# sources.yaml — NIST SP 800-53
+# canonical_sources: authoritative artifacts that define the framework.
+# related_sources: supporting/related resources worth monitoring.
+#
+# expected_metadata hints help the monitor extract a version/date for change
+# classification. Patterns are Python regex applied case-insensitively; group(1)
+# is used when present. Keep them conservative — when in doubt the monitor falls
+# back to ambiguous_requires_review.
+
+canonical_sources:
+  - id: sp800-53r5-csrc
+    url: "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"
+    type: canonical
+    format: html
+    description: "SP 800-53 Rev. 5 publication page (CSRC)."
+    expected_metadata:
+      title_contains: "SP 800-53"
+      version_pattern: "Rev(?:ision)?\\.?\\s*([0-9]+(?:\\.[0-9]+){0,2})"
+      date_pattern: "([A-Z][a-z]+ [0-9]{1,2}, [0-9]{4})"
+
+  - id: sp800-53a-r5-csrc
+    url: "https://csrc.nist.gov/pubs/sp/800/53/a/r5/final"
+    type: canonical
+    format: html
+    description: "SP 800-53A Rev. 5 — assessment procedures."
+    expected_metadata:
+      title_contains: "SP 800-53A"
+      version_pattern: "Rev(?:ision)?\\.?\\s*([0-9]+(?:\\.[0-9]+){0,2})"
+      date_pattern: "([A-Z][a-z]+ [0-9]{1,2}, [0-9]{4})"
+
+  - id: sp800-53b-csrc
+    url: "https://csrc.nist.gov/pubs/sp/800/53/b/upd1/final"
+    type: canonical
+    format: html
+    description: "SP 800-53B — control baselines."
+    expected_metadata:
+      title_contains: "SP 800-53B"
+      version_pattern: "Rev(?:ision)?\\.?\\s*([0-9]+(?:\\.[0-9]+){0,2})"
+      date_pattern: "([A-Z][a-z]+ [0-9]{1,2}, [0-9]{4})"
+
+related_sources:
+  - id: sp800-53-controls-project
+    url: "https://csrc.nist.gov/projects/risk-management/sp800-53-controls"
+    type: related
+    format: html
+    description: "SP 800-53 controls project hub (release notes, OSCAL, errata)."
+    expected_metadata:
+      title_contains: "800-53"
+
+  - id: sp800-53-oscal
+    url: "https://github.com/usnistgov/oscal-content"
+    type: related
+    format: html
+    description: "Official OSCAL machine-readable catalog content repository."
+    expected_metadata:
+      title_contains: "oscal"

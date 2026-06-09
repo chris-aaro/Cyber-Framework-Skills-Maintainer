@@ -1,0 +1,44 @@
+# framework_profile.yaml — NIST AI Risk Management Framework 1.0
+# framework_id and version MUST match the entry in /frameworks.yaml.
+# official_structure lists only public structural labels (functions, characteristic
+# names) — not subcategory text or full definitions.
+
+framework_id: nist-ai-rmf-1.0
+name: "NIST AI Risk Management Framework 1.0"
+version: "1.0"
+publisher: NIST
+publication_date: "2023-01-26"   # AI RMF 1.0 release; verify against canonical source
+title: "Artificial Intelligence Risk Management Framework (AI RMF 1.0)"
+designation: "NIST AI 100-1"
+
+focus_areas:
+  - ai governance
+  - ai risk assessment
+  - trustworthiness characteristics
+  - ai lifecycle risks
+  - "ai rmf functions: govern, map, measure, manage"
+
+official_structure:
+  # Public, structural labels only. No subcategory text / definitions here.
+  functions:
+    - { id: GOVERN, name: "Govern" }
+    - { id: MAP, name: "Map" }
+    - { id: MEASURE, name: "Measure" }
+    - { id: MANAGE, name: "Manage" }
+  trustworthiness_characteristics:
+    - "Valid and Reliable"
+    - "Safe"
+    - "Secure and Resilient"
+    - "Accountable and Transparent"
+    - "Explainable and Interpretable"
+    - "Privacy-Enhanced"
+    - "Fair - with Harmful Bias Managed"
+  companion_resources:
+    - { id: "AI RMF Playbook", purpose: "suggested actions per subcategory" }
+    - { id: "AI RMF Profiles", purpose: "use-case / sector tailoring" }
+
+notes: >-
+  Verify version and publication_date against the canonical AI RMF source in
+  sources.yaml before relying on them. Do not treat the function and
+  characteristic lists as a substitute for the official AI RMF Core or its
+  definitions.

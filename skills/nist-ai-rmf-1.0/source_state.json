@@ -1,0 +1,65 @@
+{
+  "last_run": null,
+  "sources": {
+    "ai-rmf-program-home": {
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "type": "canonical",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    },
+    "ai-rmf-100-1-pdf": {
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "type": "canonical",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    },
+    "ai-rmf-playbook": {
+      "url": "https://airc.nist.gov/airmf-resources/playbook/",
+      "type": "related",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    },
+    "ai-rmf-airc-home": {
+      "url": "https://airc.nist.gov/",
+      "type": "related",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    },
+    "ai-rmf-genai-profile": {
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "type": "related",
+      "reachable": null,
+      "http_status": null,
+      "content_sha256": null,
+      "title": null,
+      "detected_version": null,
+      "detected_pub_date": null,
+      "error": null,
+      "last_checked": null
+    }
+  }
+}

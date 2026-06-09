@@ -1,0 +1,49 @@
+# framework_profile.yaml — NIST SP 800-53
+# framework_id and version MUST match the entry in /frameworks.yaml.
+# official_structure lists only public structural labels (not control text).
+
+framework_id: nist-sp-800-53
+name: "NIST SP 800-53"
+version: "5.1.1"
+publisher: NIST
+publication_date: "2023-11-07"   # Rev 5.1.1 (patch release); verify against canonical source
+title: "Security and Privacy Controls for Information Systems and Organizations"
+
+focus_areas:
+  - control interpretation
+  - implementation
+  - assessment evidence
+  - tailoring and overlays
+  - mappings
+
+official_structure:
+  # Public, structural labels only — the control families. No control text here.
+  control_families:
+    - { id: AC, name: "Access Control" }
+    - { id: AT, name: "Awareness and Training" }
+    - { id: AU, name: "Audit and Accountability" }
+    - { id: CA, name: "Assessment, Authorization, and Monitoring" }
+    - { id: CM, name: "Configuration Management" }
+    - { id: CP, name: "Contingency Planning" }
+    - { id: IA, name: "Identification and Authentication" }
+    - { id: IR, name: "Incident Response" }
+    - { id: MA, name: "Maintenance" }
+    - { id: MP, name: "Media Protection" }
+    - { id: PE, name: "Physical and Environmental Protection" }
+    - { id: PL, name: "Planning" }
+    - { id: PM, name: "Program Management" }
+    - { id: PS, name: "Personnel Security" }
+    - { id: PT, name: "PII Processing and Transparency" }
+    - { id: RA, name: "Risk Assessment" }
+    - { id: SA, name: "System and Services Acquisition" }
+    - { id: SC, name: "System and Communications Protection" }
+    - { id: SI, name: "System and Information Integrity" }
+    - { id: SR, name: "Supply Chain Risk Management" }
+  companion_publications:
+    - { id: "SP 800-53A", purpose: "assessment procedures" }
+    - { id: "SP 800-53B", purpose: "control baselines" }
+
+notes: >-
+  Verify version and publication_date against the canonical CSRC publication page
+  in sources.yaml before relying on them. Do not treat the family list as a
+  substitute for the official control catalog.

@@ -1,0 +1,33 @@
+# frameworks.yaml
+# Registry of the NIST frameworks maintained in this repository.
+# Single source of truth iterated by monitors/monitor.py and validation/validate_skills.py.
+#
+# `version` here is the authoritative version that each framework_profile.yaml MUST match.
+# Update this file (via pull request) only after a reviewed framework change.
+
+schema_version: 1
+
+frameworks:
+  - id: nist-sp-800-53
+    name: "NIST SP 800-53"
+    version: "5.1.1"
+    skill_dir: skills/nist-sp-800-53
+    profile: skills/nist-sp-800-53/framework_profile.yaml
+    sources: skills/nist-sp-800-53/sources.yaml
+    state: skills/nist-sp-800-53/source_state.json
+
+  - id: nist-csf-2.0
+    name: "NIST Cybersecurity Framework 2.0"
+    version: "2.0"
+    skill_dir: skills/nist-csf-2.0
+    profile: skills/nist-csf-2.0/framework_profile.yaml
+    sources: skills/nist-csf-2.0/sources.yaml
+    state: skills/nist-csf-2.0/source_state.json
+
+  - id: nist-ai-rmf-1.0
+    name: "NIST AI Risk Management Framework 1.0"
+    version: "1.0"
+    skill_dir: skills/nist-ai-rmf-1.0
+    profile: skills/nist-ai-rmf-1.0/framework_profile.yaml
+    sources: skills/nist-ai-rmf-1.0/sources.yaml
+    state: skills/nist-ai-rmf-1.0/source_state.json

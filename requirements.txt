@@ -1,0 +1,7 @@
+# Runtime + dev dependencies.
+# Everything else in this project uses the Python standard library
+# (urllib, hashlib, json, re, argparse, pathlib).
+PyYAML==6.0.1
+
+# Dev / CI only (skill validation tests):
+pytest==8.2.0

@@ -1,0 +1,38 @@
+# framework_profile.yaml — NIST Cybersecurity Framework 2.0
+# framework_id and version MUST match the entry in /frameworks.yaml.
+# official_structure lists only the public Function labels (not Subcategory text).
+
+framework_id: nist-csf-2.0
+name: "NIST Cybersecurity Framework 2.0"
+version: "2.0"
+publisher: NIST
+publication_date: "2024-02-26"   # CSF 2.0 release; verify against canonical source
+title: "The NIST Cybersecurity Framework (CSF) 2.0"
+designation: "NIST CSWP 29"
+
+focus_areas:
+  - cybersecurity outcomes
+  - current and target profiles
+  - governance
+  - program maturity
+  - roadmaps
+
+official_structure:
+  # Public, structural labels only — the six CSF 2.0 Functions. No outcome text.
+  functions:
+    - { id: GV, name: "Govern" }
+    - { id: ID, name: "Identify" }
+    - { id: PR, name: "Protect" }
+    - { id: DE, name: "Detect" }
+    - { id: RS, name: "Respond" }
+    - { id: RC, name: "Recover" }
+  constructs:
+    - "Functions -> Categories -> Subcategories (outcomes)"
+    - "Organizational and Community Profiles (Current / Target)"
+    - "Implementation Tiers"
+    - "Informative References"
+
+notes: >-
+  Verify version and publication_date against the canonical CSF 2.0 source in
+  sources.yaml before relying on them. Do not treat the Function list as a
+  substitute for the official CSF Core.

@@ -1,0 +1,55 @@
+name: Monitor NIST sources
+
+# Scheduled monitoring of official NIST framework sources.
+# On detecting a review-worthy change, the monitor opens a GitHub issue.
+# It NEVER pushes changes to the repository; skill edits flow through PRs.
+
+on:
+  schedule:
+    # Weekly, Mondays 06:00 UTC. Adjust as needed.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      framework:
+        description: "Optional framework id to limit the run (e.g. nist-csf-2.0)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run source monitor
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.framework }}" ]; then
+            ARGS="--framework ${{ github.event.inputs.framework }}"
+          fi
+          # No --write: CI must not commit state to main. Issues only.
+          python monitors/monitor.py $ARGS --report monitor_report.json
+
+      - name: Upload monitor report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monitor-report
+          path: monitor_report.json
+          if-no-files-found: ignore

@@ -1,0 +1,34 @@
+name: Validate skills
+
+# Validates skill structure, profile/version consistency, source coverage, and
+# risky-language guardrails on every push and pull request. This is the CI gate
+# for Claude-authored updates (which arrive via PR).
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate skills (structure + guardrails)
+        run: python validation/validate_skills.py
+
+      - name: Run skill tests
+        run: python -m pytest skills -q
