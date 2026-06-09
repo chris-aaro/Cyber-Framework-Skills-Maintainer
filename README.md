@@ -2,7 +2,7 @@
 
 A system for keeping [Claude Skills](https://docs.claude.com/) accurate and current for
 cybersecurity and AI risk frameworks. Each skill turns Claude into a reliable expert on
-a specific framework — grounded in the framework's official content, never guessing.
+a specific framework based the latest version.
 
 A **weekly Claude Code routine** does the intelligent maintenance work: it detects when
 a framework's official source has changed, updates the bundled reference content, authors
