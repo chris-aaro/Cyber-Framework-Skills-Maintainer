@@ -1,65 +1,65 @@
 {
-  "last_run": null,
+  "last_run": "2026-06-09T04:43:06.105971+00:00",
   "sources": {
-    "sp800-53r5-csrc": {
-      "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
-      "type": "canonical",
-      "reachable": null,
-      "http_status": null,
-      "content_sha256": null,
-      "title": null,
-      "detected_version": null,
-      "detected_pub_date": null,
-      "error": null,
-      "last_checked": null
-    },
-    "sp800-53a-r5-csrc": {
-      "url": "https://csrc.nist.gov/pubs/sp/800/53/a/r5/final",
-      "type": "canonical",
-      "reachable": null,
-      "http_status": null,
-      "content_sha256": null,
-      "title": null,
-      "detected_version": null,
-      "detected_pub_date": null,
-      "error": null,
-      "last_checked": null
-    },
-    "sp800-53b-csrc": {
-      "url": "https://csrc.nist.gov/pubs/sp/800/53/b/upd1/final",
-      "type": "canonical",
-      "reachable": null,
-      "http_status": null,
-      "content_sha256": null,
-      "title": null,
-      "detected_version": null,
-      "detected_pub_date": null,
-      "error": null,
-      "last_checked": null
-    },
     "sp800-53-controls-project": {
-      "url": "https://csrc.nist.gov/projects/risk-management/sp800-53-controls",
-      "type": "related",
-      "reachable": null,
-      "http_status": null,
-      "content_sha256": null,
-      "title": null,
-      "detected_version": null,
+      "content_sha256": "9cb2de512be17c30506a54c39c9a588aac03fa62285f07ce600cb799d699dc0f",
       "detected_pub_date": null,
+      "detected_version": null,
       "error": null,
-      "last_checked": null
+      "http_status": 200,
+      "last_checked": "2026-06-09T04:43:05.630685+00:00",
+      "reachable": true,
+      "title": "NIST Risk Management Framework | CSRC",
+      "type": "related",
+      "url": "https://csrc.nist.gov/projects/risk-management/sp800-53-controls"
     },
     "sp800-53-oscal": {
-      "url": "https://github.com/usnistgov/oscal-content",
-      "type": "related",
-      "reachable": null,
-      "http_status": null,
-      "content_sha256": null,
-      "title": null,
-      "detected_version": null,
+      "content_sha256": "651f3b4d23c42cc4eb488ddb3fd77e2c1f685cef7edde21ddfcc31187b784dec",
       "detected_pub_date": null,
+      "detected_version": null,
       "error": null,
-      "last_checked": null
+      "http_status": 200,
+      "last_checked": "2026-06-09T04:43:06.104578+00:00",
+      "reachable": true,
+      "title": "GitHub - usnistgov/oscal-content: NIST SP 800-53 content and other OSCAL content examples · GitHub",
+      "type": "related",
+      "url": "https://github.com/usnistgov/oscal-content"
+    },
+    "sp800-53a-r5-csrc": {
+      "content_sha256": "528571a7e479133157148d1c4bef2092d55ec91233e6cd46724e54d82df0c342",
+      "detected_pub_date": "August 27, 2025",
+      "detected_version": "5",
+      "error": null,
+      "http_status": 200,
+      "last_checked": "2026-06-09T04:43:05.391626+00:00",
+      "reachable": true,
+      "title": "SP 800-53A Rev. 5, Assessing Security and Privacy Controls in Information Systems and Organizations | CSRC",
+      "type": "canonical",
+      "url": "https://csrc.nist.gov/pubs/sp/800/53/a/r5/final"
+    },
+    "sp800-53b-csrc": {
+      "content_sha256": "41f5c07ee65af5a93b64078e87e6e9f09f3de4e42ed0403d242f33949ebedd86",
+      "detected_pub_date": "August 27, 2025",
+      "detected_version": "5",
+      "error": null,
+      "http_status": 200,
+      "last_checked": "2026-06-09T04:43:05.513450+00:00",
+      "reachable": true,
+      "title": "SP 800-53B, Control Baselines for Information Systems and Organizations | CSRC",
+      "type": "canonical",
+      "url": "https://csrc.nist.gov/pubs/sp/800/53/b/upd1/final"
+    },
+    "sp800-53r5-csrc": {
+      "content_sha256": "0046433dfcb0bda98768e04ac69aa70462810d9d698d9adc69036f81eda861da",
+      "detected_pub_date": "August 27, 2025",
+      "detected_version": "5.2.0",
+      "error": null,
+      "http_status": 200,
+      "last_checked": "2026-06-09T04:43:04.957011+00:00",
+      "reachable": true,
+      "title": "SP 800-53 Rev. 5, Security and Privacy Controls for Information Systems and Organizations | CSRC",
+      "type": "canonical",
+      "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final"
     }
   }
 }

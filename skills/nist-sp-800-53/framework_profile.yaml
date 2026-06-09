@@ -4,7 +4,7 @@
 
 framework_id: nist-sp-800-53
 name: "NIST SP 800-53"
-version: "5.1.0"
+version: "5.2.0"
 publisher: NIST
 publication_date: "2023-11-07"   # Rev 5.1.1 (patch release); verify against canonical source
 title: "Security and Privacy Controls for Information Systems and Organizations"

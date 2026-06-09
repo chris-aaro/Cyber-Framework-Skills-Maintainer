@@ -6,6 +6,10 @@ land via pull request after verification against the canonical sources.
 
 ## [Unreleased]
 
+### Changed
+- Pinned version updated from `5.1.0` to `5.2.0` to match the version detected on the canonical source(s) on 2026-06-09: https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final.
+  Detected change class: `new_framework_version`. Reviewer: confirm against the official source and update SKILL.md if the substantive framework content changed.
+
 ### Added
 - Initial skill scaffold: SKILL.md, framework_profile.yaml, sources.yaml,
   source_state.json, tests.
